@@ -14,7 +14,7 @@ public class MouseFollowBehaviour : MonoBehaviour
     void Update()
     {
         var mousePos = currentCamera.ScreenToWorldPoint(Input.mousePosition);
-
+        
         Vector3 rot = mousePos - transform.position;
         float rotZ = Mathf.Atan2(rot.y, rot.x) * Mathf.Rad2Deg;
 
