@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 431191160}
   - component: {fileID: 431191161}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,10 +92,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1643705476}
-  - component: {fileID: 1643705477}
-  m_Layer: 0
-  m_Name: ArmPivot
+  - component: {fileID: 826865359}
+  - component: {fileID: 826865360}
+  m_Layer: 7
+  m_Name: AimPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1444497503676069818}
   - component: {fileID: 338949149983746937}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JumpReset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729551982450576049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -279,7 +279,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.46}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -290,7 +290,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.1}
+  m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
 --- !u!1 &1419902865119307788
 GameObject:
@@ -303,8 +303,8 @@ GameObject:
   - component: {fileID: 8698207965728772618}
   - component: {fileID: 4677697028378681980}
   - component: {fileID: 7361260688746402276}
-  - component: {fileID: 3014665376320969067}
-  m_Layer: 0
+  - component: {fileID: 2509280749417219659}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3014665376320969067
+--- !u!114 &2509280749417219659
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -414,8 +414,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  initialJump: 5
-  jumpStrength: 3
+  initialJump: 3
+  jumpStrength: 4
   jumpGranuality: 20
 --- !u!1 &7462448464717805846
 GameObject:
