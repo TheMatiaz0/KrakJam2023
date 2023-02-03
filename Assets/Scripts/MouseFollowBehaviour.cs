@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class MouseFollowBehaviour : MonoBehaviour
 {
-    private Camera currentCamera;
-
-    void Start()
+    private void Update()
     {
-        currentCamera = Camera.current;
-    }
-
-    void Update()
-    {
-        var mousePos = currentCamera.ScreenToWorldPoint(Input.mousePosition);
-        
-        Vector3 rot = mousePos - transform.position;
-        float rotZ = Mathf.Atan2(rot.y, rot.x) * Mathf.Rad2Deg;
+        var diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        diff.Normalize();
+        var rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
     }
