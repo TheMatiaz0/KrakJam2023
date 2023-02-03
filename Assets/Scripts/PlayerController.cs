@@ -5,9 +5,11 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed = 5;
+    [SerializeField] private float treeRatio = 0.5f;
+    [SerializeField] private float maxSpeed = 5;
+    [SerializeField] private float minSpeed = 0.1f;
     [SerializeField] private float initialJump = 3;
     [SerializeField] private float jumpStrength = 4;
     // The time space is held affects jump height.
@@ -16,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D body;
     private int framesSinceFloor = 0;
     
-    // Start is called before the first frame update
+    
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -29,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        var dt = Time.deltaTime;
+        var speed = Mathf.Lerp(maxSpeed, minSpeed, treeRatio);
         
         body.velocity = new Vector2(0, body.velocity.y);
         if (Input.GetKey(KeyCode.D))
