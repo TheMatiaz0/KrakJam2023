@@ -12,38 +12,33 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpStrength = 4;
     // The time space is held affects jump height.
     [SerializeField] private float jumpGranuality = 20;
-
+    
     private Rigidbody2D body;
-    private BoxCollider2D jumpResetCollider;
     private int framesSinceFloor = 0;
     
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        jumpResetCollider = GetComponentInChildren<BoxCollider2D>();
     }
-
-    private void OnCollisionStay2D(Collision2D collision)
+    
+    private void OnTriggerStay2D(Collider2D other)
     {
-        Collider2D col = collision.GetContact(0).otherCollider;
-        if (col == jumpResetCollider)
-        {
-            framesSinceFloor = 0;
-        }
+        framesSinceFloor = 0;
     }
 
     void Update()
     {
         var dt = Time.deltaTime;
         
+        body.velocity = new Vector2(0, body.velocity.y);
         if (Input.GetKey(KeyCode.D))
         {
-            this.transform.position += Vector3.right * (speed * dt);
+            body.velocity = new Vector2(speed, body.velocity.y);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            this.transform.position += Vector3.left * (speed * dt);
+            body.velocity = new Vector2(-speed, body.velocity.y);
         }
         
         if (Input.GetKey(KeyCode.Space) && framesSinceFloor == 0)
