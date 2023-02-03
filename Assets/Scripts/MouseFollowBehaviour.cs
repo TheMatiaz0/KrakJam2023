@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseFollowBehaviour : MonoBehaviour
 {
-    void Update()
+    private void Update()
     {
         var diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         diff.Normalize();
