@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float treeRatio = 0.5f;
+    [SerializeField] private float treeRatio = 0.1f;
     [SerializeField] private float maxSpeed = 5;
     [SerializeField] private float minSpeed = 0.1f;
     [SerializeField] private float initialJump = 3;
@@ -17,8 +17,7 @@ public class PlayerController : MonoBehaviour
     
     private Rigidbody2D body;
     private int framesSinceFloor = 0;
-    
-    
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
