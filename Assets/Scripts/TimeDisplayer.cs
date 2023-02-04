@@ -12,6 +12,6 @@ public class TimeDisplayer : MonoBehaviour
     private void Update()
     {
         
-        timeText.text = lvlController.WinTimer;
+        // timeText.text = lvlController.WinTimer;
     }
 }
