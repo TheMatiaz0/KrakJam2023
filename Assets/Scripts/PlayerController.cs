@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -38,6 +39,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        #if UNITY_EDITOR || DEVELOPMENT_BUILD
+        
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        
+        #endif
+        
         var jumpBoost = (0.5f - hp.Hp / hp.HpMax) * 2;
         var speed = Mathf.Lerp(maxSpeed, minSpeed, hp.Hp / hp.HpMax);
         anim.speed = 1 - (hp.Hp / hp.HpMax);
