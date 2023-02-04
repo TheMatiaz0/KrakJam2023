@@ -5158,7 +5158,7 @@ Transform:
   - {fileID: 431191160}
   - {fileID: 1643705476}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &4677697028378681980
 BoxCollider2D:
@@ -5361,3 +5361,5 @@ MonoBehaviour:
   cooldown: 0.5
   bulletsCount: 3
   spreadDegree: -11
+  shootParticle: {fileID: 1712478595}
+  particleTime: 0.5

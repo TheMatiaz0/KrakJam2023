@@ -14,9 +14,18 @@ public class BulletController : MonoBehaviour
     [SerializeField] private float cooldown = 0.5f;
     [SerializeField] private int bulletsCount;
     [SerializeField] private float spreadDegree = -21;
+    [SerializeField] private ParticleSystem shootParticle;
+    [SerializeField] private float particleTime = 0.3f;
+
+    private Coroutine shootParticleCoroutine;
 
     private bool isInCooldown;
-    
+
+    private void Start()
+    {
+        shootParticle.gameObject.SetActive(false);
+    }
+
     private void Update()
     {
         if (!Input.GetMouseButtonDown(0) || isInCooldown) return;
@@ -26,6 +35,10 @@ public class BulletController : MonoBehaviour
 
             bullet.transform.Rotate(new Vector3(0, 0, i * spreadDegree));
             
+            shootParticle.gameObject.SetActive(true);
+            if (shootParticleCoroutine == null)
+                shootParticleCoroutine = StartCoroutine(ParticleWithCooldown());
+            
             bullet.Owner = this.gameObject;
             bullet.Damage = bulletDamage;
             bullet.Rb2D.AddForce(bullet.transform.right * bulletSpeed, ForceMode2D.Impulse);
@@ -33,6 +46,13 @@ public class BulletController : MonoBehaviour
             Invoke(nameof(ResetCooldown), cooldown);
             isInCooldown = true;
         }
+    }
+
+    private IEnumerator ParticleWithCooldown()
+    {
+        yield return new WaitForSeconds(particleTime);
+        shootParticle.gameObject.SetActive(false);
+        shootParticleCoroutine = null;
     }
 
     public void Shoot()
