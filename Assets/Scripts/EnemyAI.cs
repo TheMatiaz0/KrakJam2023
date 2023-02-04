@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public Rigidbody2D rgbd;
-    public Transform PlayerTransform;
+    private Rigidbody2D rgbd;
+    
     public float speed = 1;
 
     private void Start()
@@ -17,6 +17,6 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-        rgbd.transform.position += new Vector3(PlayerTransform.transform.position.x-rgbd.transform.position.x, 0, 0) * (Time.deltaTime * speed);
+        rgbd.transform.position += new Vector3(PlayerInstance.Current.transform.position.x-rgbd.transform.position.x, 0, 0) * (Time.deltaTime * speed);
     }
 }
