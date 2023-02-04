@@ -37,8 +37,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - ParallaxBackground
+  - GradientBackgorund
   m_SortingLayers:
   - name: Default
     uniqueID: 0
