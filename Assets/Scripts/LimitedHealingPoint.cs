@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class LimitedHealingPoint : MonoBehaviour
 {
-    [SerializeField] private int capacity = 20;
-    [SerializeField] private float cooldown = 1f;
+    [SerializeField] private float capacity = 20;
+    [SerializeField] private float cooldown = 100f;
+    [SerializeField] private float healRate = 1f;
 
     private Coroutine healCoroutine;
     
@@ -23,10 +24,11 @@ public class LimitedHealingPoint : MonoBehaviour
         {
             if (capacity > 0)
             {
-                entity.Hp++;
-                capacity--;
+                var change = healRate * (cooldown / 1000);
+                entity.Hp += change;
+                capacity -= change;
             }
-            yield return new WaitForSeconds(cooldown);
+            yield return new WaitForSeconds(cooldown / 1000);
         }
 
         healCoroutine = null;

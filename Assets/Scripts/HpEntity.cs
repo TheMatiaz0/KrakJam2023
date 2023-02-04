@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class HpEntity : MonoBehaviour
 {
-    [SerializeField] private int maxHp = 2;
-    [SerializeField] private int startHp = 2;
+    [SerializeField] private float maxHp = 2;
+    [SerializeField] private float startHp = 2;
 
-    private int _hp;
-    public int Hp
+    private float _hp;
+    public float Hp
     {
         get => _hp;
         set
@@ -25,7 +25,7 @@ public class HpEntity : MonoBehaviour
         }
     }
 
-    public int HpMax
+    public float HpMax
     {
         get => maxHp;
     }
