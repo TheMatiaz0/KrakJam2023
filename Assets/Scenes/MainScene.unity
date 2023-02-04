@@ -3994,6 +3994,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1712478592, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
+      propertyPath: m_Name
+      value: FireParticle
+      objectReference: {fileID: 0}
     - target: {fileID: 1419902865119307788, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
       propertyPath: m_Name
       value: Player
