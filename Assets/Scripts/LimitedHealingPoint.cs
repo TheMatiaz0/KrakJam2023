@@ -50,6 +50,7 @@ public class LimitedHealingPoint : MonoBehaviour
 
     private IEnumerator HealWithCooldown(Collider2D other)
     {
+        if (other == null) yield break;
         if (other.TryGetComponent<HpEntity>(out var entity) && other.gameObject == PlayerInstance.Current.gameObject)
         {
             if (capacity > 0)
