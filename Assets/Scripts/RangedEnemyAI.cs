@@ -13,7 +13,8 @@ public class RangedEnemyAI : EnemyAI
 
     public override void Flee()
     {
-        // FLEE HERE
+        var dt = -(PlayerInstance.Current.transform.position.x - this.transform.position.x);
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2(dt, transform.position.y), speed * Time.deltaTime);
     }
 
     private float GetDelta()
