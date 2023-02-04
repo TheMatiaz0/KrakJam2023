@@ -16,14 +16,14 @@ public class PlayerController : MonoBehaviour
     
     private Rigidbody2D body;
     private SpriteRenderer sprite;
-    //private HpEntity hp;
+    private HpEntity hp;
     private int framesSinceFloor = 0;
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
-        //hp = GetComponent<HpEntity>();
+        hp = GetComponent<HpEntity>();
     }
     
     private void OnTriggerStay2D(Collider2D other)
@@ -33,8 +33,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-       // var speed = Mathf.Lerp(maxSpeed, minSpeed, hp.Hp / (float)hp.HpMax);
-       var speed = 5f;
+       var speed = Mathf.Lerp(maxSpeed, minSpeed, hp.Hp / (float)hp.HpMax);
+       
         body.velocity = new Vector2(0, body.velocity.y);
         if (Input.GetKey(KeyCode.D))
         {
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         
         framesSinceFloor += 1;
         
-        //sprite.material.SetFloat("Blend", hp.Hp / (float)hp.HpMax);
-        //Debug.Log(hp.Hp / (float)hp.HpMax);
+        sprite.material.SetFloat("_Blend", hp.Hp / (float)hp.HpMax);
+        Debug.Log(hp.Hp / (float)hp.HpMax);
     }
 }

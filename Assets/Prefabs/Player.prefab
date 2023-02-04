@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 431191159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.4543, z: 0}
-  m_LocalScale: {x: 1, y: 1.9088465, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8698207965728772618}
@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: e3b23736bb3d8e94f8df9af2fcd759d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d50577e32ccb1844bd5fec795745184, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -415,7 +415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2501386219ae8d478aff8cbcae9718b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treeRatio: 0.5
   maxSpeed: 5
   minSpeed: 0.1
   initialJump: 3
@@ -434,6 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 1
+  startHp: 2
 --- !u!114 &2595267778849071434
 MonoBehaviour:
   m_ObjectHideFlags: 0
