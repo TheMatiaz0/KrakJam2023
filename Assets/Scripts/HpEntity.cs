@@ -14,14 +14,10 @@ public class HpEntity : MonoBehaviour
         get => _hp;
         set
         {
-<<<<<<< Updated upstream
             #if UNITY_EDITOR
             Debug.Log($"{this.gameObject.name} has now <color=red>{value} HP</color>", this.gameObject);
             #endif
-            _hp = value;
-=======
             _hp = Mathf.Clamp(value, 0, maxHp);
->>>>>>> Stashed changes
             if (_hp <= 0)
             {
                 Death();
