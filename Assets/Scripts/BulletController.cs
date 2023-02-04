@@ -41,35 +41,19 @@ public class BulletController : MonoBehaviour
         Shoot();
     }
 
-    private IEnumerator ParticleWithCooldown()
-    {
-        yield return new WaitForSeconds(particleTime);
-        if (shootParticle != null)
-        {
-            shootParticle.transform.SetParent(cachedShootParticleParent);
-            shootParticle.gameObject.SetActive(false);
-            shootParticleCoroutine = null;
-        }
-    }
-
     public void Shoot(bool isPlayerShooter = true)
     {
         if (isInCooldown) return;
-        shotgunSound.Play();
+        if (isPlayerShooter)
+        {
+            shotgunSound.Play();
+        }
+
         for (int i = -1; i < bulletsCount - 1; i++)
         {
             var bullet = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
 
             bullet.transform.Rotate(new Vector3(0, 0, i * spreadDegree));
-
-            if (shootParticle != null)
-            {
-                cachedShootParticleParent = shootParticle.transform;
-                shootParticle.transform.SetParent(null);
-                shootParticle.gameObject.SetActive(true);
-                if (shootParticleCoroutine == null)
-                    shootParticleCoroutine = StartCoroutine(ParticleWithCooldown());
-            }
 
             bullet.Owner = this.gameObject;
             bullet.Damage = bulletDamage;
@@ -79,6 +63,7 @@ public class BulletController : MonoBehaviour
             Invoke(nameof(ResetCooldown), cooldown);
             isInCooldown = true;
         }
+        shotgunSound.Play();
     }
 
     private void ResetCooldown()
