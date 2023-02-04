@@ -6,7 +6,7 @@ public class RangedEnemyAI : EnemyAI
 {
     [SerializeField] private float maxDelta = 5;
     [SerializeField] private GameObject enemyBulletPrefab;
-    [SerializeField] private BulletController bulletContr
+    [SerializeField] private BulletController bulletController;
 
     private Coroutine shootCoroutine;
     
