@@ -8,7 +8,6 @@ public enum SpawnerBehaviour
 {
     Periodic,
     SingleRandom,
-    OnCall
 }
 
 public class SpawnerGroup : MonoBehaviour
@@ -16,6 +15,7 @@ public class SpawnerGroup : MonoBehaviour
     [SerializeField] public SpawnerBehaviour behaviour = SpawnerBehaviour.Periodic;
 
     [SerializeField] private float interval = 2;
+    [SerializeField] private int EnemyLimit;
     
     private List<Spawner> spawners = new List<Spawner>();
     private float timeSinceSpawn = 0;
@@ -26,17 +26,22 @@ public class SpawnerGroup : MonoBehaviour
         {
             spawners.Add(spawner);
         }
+
+        RecountMobs();
     }
 
     void Update()
     {
         timeSinceSpawn += Time.deltaTime;
             
-        if (timeSinceSpawn >= interval)
+        if (timeSinceSpawn >= interval && behaviour == SpawnerBehaviour.SingleRandom)
         {
-            int i = (int)Mathf.Round(Random.Range(0f, spawners.Count - 1f));
-            spawners[i].Spawn();
-            timeSinceSpawn = 0;
+            if (RecountMobs() < (uint)(EnemyLimit))
+            {
+                int i = (int)Mathf.Round(Random.Range(0f, spawners.Count - 1f));
+                spawners[i].Spawn();
+                timeSinceSpawn = 0;
+            }
         }
         
         foreach (var spawner in spawners)
@@ -44,5 +49,10 @@ public class SpawnerGroup : MonoBehaviour
             spawner.periodicSpawn = (behaviour == SpawnerBehaviour.Periodic);
             spawner.interval = interval;
         }
+    }
+
+    uint RecountMobs()
+    {
+        return (uint)GameObject.FindGameObjectsWithTag("Enemi").Length;
     }
 }
