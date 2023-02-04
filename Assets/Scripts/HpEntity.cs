@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class HpEntity : MonoBehaviour
 {
-    [SerializeField] private float maxHp = 2;
-    [SerializeField] private float startHp = 2;
+    [SerializeField] private float maxHp = 100;
+    [SerializeField] private float startHp = 10;
 
     private float _hp;
     public float Hp
@@ -18,7 +18,7 @@ public class HpEntity : MonoBehaviour
             Debug.Log($"{this.gameObject.name} has now <color=red>{value} HP</color>", this.gameObject);
             #endif
             _hp = Mathf.Clamp(value, 0, maxHp);
-            if (_hp <= 0)
+            if (_hp <= 0 || _hp >= 100)
             {
                 Death();
             }
