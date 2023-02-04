@@ -18,27 +18,51 @@ public class BulletController : MonoBehaviour
     [SerializeField] private float particleTime = 0.3f;
 
     private Coroutine shootParticleCoroutine;
-
     private bool isInCooldown;
 
     private void Start()
     {
-        shootParticle.gameObject.SetActive(false);
+        if (shootParticle != null)
+            shootParticle.gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        if (!Input.GetMouseButtonDown(0) || isInCooldown) return;
+        UpdateInput();
+    }
+
+    private void UpdateInput()
+    {
+        if (!Input.GetMouseButtonDown(0)) return;
+        Shoot();
+    }
+
+    private IEnumerator ParticleWithCooldown()
+    {
+        yield return new WaitForSeconds(particleTime);
+        if (shootParticle != null)
+        {
+            shootParticle.gameObject.SetActive(false);
+            shootParticleCoroutine = null;
+        }
+    }
+
+    public void Shoot()
+    {
+        if (isInCooldown) return;
         for (int i = 0; i < bulletsCount; i++)
         {
             var bullet = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
 
             bullet.transform.Rotate(new Vector3(0, 0, i * spreadDegree));
-            
-            shootParticle.gameObject.SetActive(true);
-            if (shootParticleCoroutine == null)
-                shootParticleCoroutine = StartCoroutine(ParticleWithCooldown());
-            
+
+            if (shootParticle != null)
+            {
+                shootParticle.gameObject.SetActive(true);
+                if (shootParticleCoroutine == null)
+                    shootParticleCoroutine = StartCoroutine(ParticleWithCooldown());
+            }
+
             bullet.Owner = this.gameObject;
             bullet.Damage = bulletDamage;
             bullet.Rb2D.AddForce(bullet.transform.right * bulletSpeed, ForceMode2D.Impulse);
@@ -46,18 +70,6 @@ public class BulletController : MonoBehaviour
             Invoke(nameof(ResetCooldown), cooldown);
             isInCooldown = true;
         }
-    }
-
-    private IEnumerator ParticleWithCooldown()
-    {
-        yield return new WaitForSeconds(particleTime);
-        shootParticle.gameObject.SetActive(false);
-        shootParticleCoroutine = null;
-    }
-
-    public void Shoot()
-    {
-        
     }
 
     private void ResetCooldown()
