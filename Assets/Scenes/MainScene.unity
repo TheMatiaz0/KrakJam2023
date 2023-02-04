@@ -6217,8 +6217,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 981baed508cdafc4c901f6afbcf9888f, type: 2}
     - target: {fileID: 1712478595, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712478595, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
       propertyPath: ShapeModule.m_Rotation.z
-      value: -4.4
+      value: -14.67
       objectReference: {fileID: 0}
     - target: {fileID: 1712478595, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
       propertyPath: InitialModule.maxNumParticles
