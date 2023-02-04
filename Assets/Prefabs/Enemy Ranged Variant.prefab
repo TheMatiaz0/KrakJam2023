@@ -60,9 +60,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2429969049254813278, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 33.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429969049254813278, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 35.001804
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429969049254813279, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b2761b6b372ea054a92afb7a9d036084, type: 3}
+    - target: {fileID: 2429969049254813279, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2429969049254813279, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
       propertyPath: m_Color.g
-      value: 0.37814653
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429969049254813279, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 369528090907900157, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
@@ -94,3 +114,5 @@ MonoBehaviour:
   jump: 2
   jumpCooldown: 2
   maxDelta: 5
+  enemyBulletPrefab: {fileID: 0}
+  bulletController: {fileID: 0}
