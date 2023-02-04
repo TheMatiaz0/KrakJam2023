@@ -50,7 +50,7 @@ public class BulletController : MonoBehaviour
     public void Shoot(bool isPlayerShooter = true)
     {
         if (isInCooldown) return;
-        for (int i = 0; i < bulletsCount; i++)
+        for (int i = -1; i < bulletsCount - 1; i++)
         {
             var bullet = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
 
