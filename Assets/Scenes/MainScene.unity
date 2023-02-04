@@ -1385,11 +1385,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4403018798922881679, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
       propertyPath: maxHp
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4403018798922881679, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
       propertyPath: startHp
-      value: 45
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8698207965728772618, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
       propertyPath: m_RootOrder
