@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        var jumpBoost = 0.5f - hp.Hp / hp.HpMax;
+        var jumpBoost = (0.5f - hp.Hp / hp.HpMax) * 2;
         var speed = Mathf.Lerp(maxSpeed, minSpeed, hp.Hp / hp.HpMax);
         anim.speed = 1 - (hp.Hp / hp.HpMax);
        
