@@ -9,7 +9,8 @@ public class CollisionHpTaker : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.TryGetComponent<HpEntity>(out var entity) && col.gameObject != this.gameObject)
+        var colObj = col.gameObject;
+        if (colObj.TryGetComponent<HpEntity>(out var entity) && colObj.GetComponent<PlayerInstance>() != null)
         {
             entity.Hp -= damage;
         }
