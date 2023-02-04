@@ -56,7 +56,8 @@ Material:
     - _Blend: 0
     - _Noise: 5
     - _Smooth: 0.1
-    m_Colors: []
+    m_Colors:
+    - _Direction: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2439988134843407271
 MonoBehaviour:

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,13 @@ public class MouseFollowBehaviour : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    
+
+    private Vector2 initialArmPos;
+    private void Start()
+    {
+        initialArmPos = transform.localPosition;
+    }
+
     private void Update()
     {
         var diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -18,6 +25,7 @@ public class MouseFollowBehaviour : MonoBehaviour
         if (rotZ < -90  || rotZ > 90)
         {
             spriteRenderer.flipX = true;
+            transform.localPosition = new Vector3(-initialArmPos.x, initialArmPos.y, 0);
             if (player.eulerAngles.y == 0)
             {
                 transform.localRotation = Quaternion.Euler(180, 0, -rotZ);
@@ -30,6 +38,7 @@ public class MouseFollowBehaviour : MonoBehaviour
         else
         {
             spriteRenderer.flipX = false;
+            transform.localPosition = initialArmPos;
         }
     }
 }
