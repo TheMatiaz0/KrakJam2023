@@ -595,7 +595,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132733999}
   m_LocalRotation: {x: -1.776357e-15, y: -0.00000026226044, z: -4.658682e-22, w: 1}
-  m_LocalPosition: {x: 0.0000054836273, y: -3.552714e-14, z: -10}
+  m_LocalPosition: {x: 0.000005722046, y: -3.552714e-14, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5986,7 +5986,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082340734}
   m_LocalRotation: {x: -1.776357e-15, y: -0.00000026226044, z: -4.658682e-22, w: 1}
-  m_LocalPosition: {x: 0.0000054836273, y: -3.552714e-14, z: -10}
+  m_LocalPosition: {x: 0.000005722046, y: -3.552714e-14, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6208,6 +6208,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1712478594, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712478595, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712478595, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712478595, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 1419902865119307788, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
       propertyPath: m_Name
       value: Player
