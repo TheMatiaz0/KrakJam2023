@@ -20,7 +20,6 @@ public class EnemySpawner : MonoBehaviour
         KeyCode.Alpha9,
     };
 
-
     private void Update()
     {
         for (int i = 0; i < keyCodes.Length; i++)

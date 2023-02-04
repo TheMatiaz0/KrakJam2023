@@ -6,6 +6,7 @@ using UnityEngine;
 public class LimitedHealingPoint : MonoBehaviour
 {
     [SerializeField] private int capacity = 20;
+    [SerializeField] private float cooldown = 1f;
 
     private Coroutine healCoroutine;
     
@@ -18,10 +19,14 @@ public class LimitedHealingPoint : MonoBehaviour
 
     private IEnumerator HealWithCooldown(Collider2D other)
     {
-        if (other.TryGetComponent<HpEntity>(out var entity) && other.gameObject.CompareTag("Player"))
+        if (other.TryGetComponent<HpEntity>(out var entity) && other.gameObject == PlayerInstance.Current.gameObject)
         {
-            entity.Hp += 1;
-            yield return new WaitForSeconds(1);
+            if (capacity > 0)
+            {
+                entity.Hp++;
+                capacity--;
+            }
+            yield return new WaitForSeconds(cooldown);
         }
 
         healCoroutine = null;
