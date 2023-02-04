@@ -24,7 +24,7 @@ public class BulletController : MonoBehaviour
         {
             var bullet = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
 
-            bullet.transform.Rotate(new Vector3(bullet.transform.rotation.x, bullet.transform.rotation.y, i * spreadDegree));
+            bullet.transform.Rotate(new Vector3(0, 0, i * spreadDegree));
             
             bullet.Owner = this.gameObject;
             bullet.Damage = bulletDamage;
