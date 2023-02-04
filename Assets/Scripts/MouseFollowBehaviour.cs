@@ -5,6 +5,7 @@ using UnityEngine;
 public class MouseFollowBehaviour : MonoBehaviour
 {
     [SerializeField] private Transform player;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     
     private void Update()
     {
@@ -16,6 +17,7 @@ public class MouseFollowBehaviour : MonoBehaviour
 
         if (rotZ < -90  || rotZ > 90)
         {
+            spriteRenderer.flipX = true;
             if (player.eulerAngles.y == 0)
             {
                 transform.localRotation = Quaternion.Euler(180, 0, -rotZ);
@@ -24,6 +26,10 @@ public class MouseFollowBehaviour : MonoBehaviour
             {
                 transform.localRotation = Quaternion.Euler(180, 180, -rotZ);
             }
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
         }
     }
 }
