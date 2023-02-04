@@ -13,6 +13,9 @@ public class HpEntity : MonoBehaviour
         get => _hp;
         set
         {
+            #if UNITY_EDITOR
+            Debug.Log($"{this.gameObject.name} has now <color=red>{value} HP</color>", this.gameObject);
+            #endif
             _hp = value;
             if (_hp <= 0)
             {
