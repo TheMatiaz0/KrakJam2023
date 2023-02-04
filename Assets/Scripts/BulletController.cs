@@ -35,6 +35,11 @@ public class BulletController : MonoBehaviour
         }
     }
 
+    public void Shoot()
+    {
+        
+    }
+
     private void ResetCooldown()
     {
         isInCooldown = false;

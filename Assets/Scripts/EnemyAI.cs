@@ -30,6 +30,13 @@ public class EnemyAI : MonoBehaviour
         {
             Flee();
         }
+
+        ExtendUpdate();
+    }
+
+    public virtual void ExtendUpdate()
+    {
+        
     }
 
     // TODO: Refactor this shit into abstract class some time later when there will be time.
