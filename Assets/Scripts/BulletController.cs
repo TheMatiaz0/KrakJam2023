@@ -19,13 +19,13 @@ public class BulletController : MonoBehaviour
 
     private Coroutine shootParticleCoroutine;
     private bool isInCooldown;
-    private Transform cachecShootParticleParent;
+    private Transform cachedShootParticleParent;
     private AudioSource shotgunSound;
 
     private void Start()
     {
         shotgunSound = GetComponent<AudioSource>();
-        
+
         if (shootParticle != null)
             shootParticle.gameObject.SetActive(false);
     }
@@ -46,7 +46,7 @@ public class BulletController : MonoBehaviour
         yield return new WaitForSeconds(particleTime);
         if (shootParticle != null)
         {
-            shootParticle.transform.SetParent(cachecShootParticleParent);
+            shootParticle.transform.SetParent(cachedShootParticleParent);
             shootParticle.gameObject.SetActive(false);
             shootParticleCoroutine = null;
         }
@@ -64,6 +64,7 @@ public class BulletController : MonoBehaviour
 
             if (shootParticle != null)
             {
+                cachedShootParticleParent = shootParticle.transform;
                 shootParticle.transform.SetParent(null);
                 shootParticle.gameObject.SetActive(true);
                 if (shootParticleCoroutine == null)
