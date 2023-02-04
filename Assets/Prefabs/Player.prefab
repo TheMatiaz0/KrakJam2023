@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 431191160}
   - component: {fileID: 431191161}
+  - component: {fileID: 2675287638537092244}
+  - component: {fileID: 387669303776515796}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -84,6 +86,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &2675287638537092244
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431191159}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 0}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &387669303776515796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431191159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c46944dca74b2a429038a74d4ff8787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frames:
+  - {fileID: 21300000, guid: 2ef83d3b5d107234580eba7b13b2118a, type: 3}
+  index: 0
 --- !u!1 &1643705475
 GameObject:
   m_ObjectHideFlags: 0
