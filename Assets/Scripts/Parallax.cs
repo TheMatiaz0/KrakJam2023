@@ -24,7 +24,7 @@ public class Parallax : MonoBehaviour
     void Update()
     {
         var camX = Camera.main.transform.position.x;
-        transform.position = new Vector3(initPos.x - (camX - initCamPos) * strenght, initPos.y);
+        transform.position = new Vector3(initPos.x - (camX - initCamPos) * (-strenght), initPos.y);
 
     }
 }
