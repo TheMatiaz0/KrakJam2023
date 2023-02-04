@@ -6,11 +6,12 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    private Rigidbody2D body;
-    
     public float speed = 1;
     public float jump = 2;
     public float jumpCooldown = 2;
+    
+    private Rigidbody2D body;
+    private Coroutine jumpCoroutine;
 
     private void Start()
     {
@@ -19,17 +20,22 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
+        if (PlayerInstance.Current == null) return;
         transform.position = Vector2.MoveTowards (transform.position, new Vector2(PlayerInstance.Current.transform.position.x, transform.position.y), speed * Time.deltaTime);
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        StartCoroutine(JumpWithDelay());
+        if (jumpCoroutine == null)
+        {
+            jumpCoroutine = StartCoroutine(JumpWithDelay());
+        }
     }
 
     private IEnumerator JumpWithDelay()
     {
         body.velocity = Vector2.up * jump;
         yield return new WaitForSeconds(jumpCooldown);
+        jumpCoroutine = null;
     }
 }
