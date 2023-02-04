@@ -123,7 +123,7 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "b5201e8c64114d4c9b66a16b769fc70e"
+                    "m_Id": "012aad54e1704415835ccd530edf0f69"
                 },
                 "m_SlotId": 1
             }
@@ -249,7 +249,7 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "012aad54e1704415835ccd530edf0f69"
+                    "m_Id": "b5201e8c64114d4c9b66a16b769fc70e"
                 },
                 "m_SlotId": 1
             }
@@ -570,9 +570,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -839.3333129882813,
-            "y": 612.0,
-            "width": 111.33331298828125,
+            "x": -834.0000610351563,
+            "y": 370.0,
+            "width": 125.33343505859375,
             "height": 36.0
         }
     },
@@ -1261,10 +1261,10 @@
     "m_Guid": {
         "m_GuidSerialized": "046efbf1-58e4-42e8-bc00-6aa934bfab16"
     },
-    "m_Name": "Tex2",
+    "m_Name": "Overlay",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Tex2",
-    "m_DefaultReferenceName": "_Tex2",
+    "m_RefNameGeneratedByDisplayName": "Overlay",
+    "m_DefaultReferenceName": "_Overlay",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -1357,10 +1357,10 @@
     "m_Guid": {
         "m_GuidSerialized": "9cde2dd2-f929-4eb7-b3d5-bb90cc688461"
     },
-    "m_Name": "Tex1",
+    "m_Name": "_MainTex",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Tex1",
-    "m_DefaultReferenceName": "_Tex1",
+    "m_RefNameGeneratedByDisplayName": "_MainTex",
+    "m_DefaultReferenceName": "_MainTex",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -1645,7 +1645,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "781f9b94649742cfb0033ada1d9a6fbf",
     "m_Id": 0,
-    "m_DisplayName": "Tex1",
+    "m_DisplayName": "_MainTex",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1808,7 +1808,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "971e90ae081244a685485b78a3c599b9",
     "m_Id": 0,
-    "m_DisplayName": "Tex2",
+    "m_DisplayName": "Overlay",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -2296,10 +2296,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -839.3333129882813,
-            "y": 357.3333435058594,
-            "width": 110.0,
-            "height": 36.0
+            "x": -830.0,
+            "y": 616.0,
+            "width": 134.66668701171876,
+            "height": 36.00006103515625
         }
     },
     "m_Slots": [
