@@ -28,14 +28,17 @@ public class EnemyAI : MonoBehaviour
     {
         if (jumpCoroutine == null)
         {
-            jumpCoroutine = StartCoroutine(JumpWithDelay());
+            jumpCoroutine = StartCoroutine(JumpWithDelay(col));
         }
     }
 
-    private IEnumerator JumpWithDelay()
+    private IEnumerator JumpWithDelay(Collider2D col)
     {
-        body.velocity = Vector2.up * jump;
-        yield return new WaitForSeconds(jumpCooldown);
+        if (col.gameObject.CompareTag("Trigger"))
+        {
+            body.velocity = Vector2.up * jump;
+            yield return new WaitForSeconds(jumpCooldown);
+        }
         jumpCoroutine = null;
     }
 }
