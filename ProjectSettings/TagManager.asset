@@ -6,6 +6,7 @@ TagManager:
   tags:
   - JumpReset
   - Trigger
+  - Enemi
   layers:
   - Default
   - TransparentFX
