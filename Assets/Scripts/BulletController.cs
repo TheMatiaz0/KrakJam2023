@@ -54,7 +54,6 @@ public class BulletController : MonoBehaviour
             Invoke(nameof(ResetCooldown), cooldown);
             isInCooldown = true;
         }
-        shotgunSound.Play();
     }
 
     private void ResetCooldown()
