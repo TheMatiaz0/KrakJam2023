@@ -38,7 +38,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-       var speed = Mathf.Lerp(maxSpeed, minSpeed, hp.Hp / hp.HpMax);
+        var speed = Mathf.Lerp(maxSpeed, minSpeed, hp.Hp / hp.HpMax);
+        anim.speed = 1 - (hp.Hp / hp.HpMax);
        
         body.velocity = new Vector2(0, body.velocity.y);
         bool walking = false;
