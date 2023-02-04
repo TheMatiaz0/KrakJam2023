@@ -7,6 +7,8 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private Collider2D col;
+    
     [SerializeField] private float maxSpeed = 5;
     [SerializeField] private float minSpeed = 0.1f;
     [SerializeField] private float initialJump = 3;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefabs;
-    private List<GameObject> spawnedEnemies;
+    private List<GameObject> spawnedEnemies = new();
 
     private KeyCode[] keyCodes =
     {

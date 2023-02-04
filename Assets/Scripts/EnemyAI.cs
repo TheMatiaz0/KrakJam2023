@@ -20,8 +20,26 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerInstance.Current == null) return;
-        transform.position = Vector2.MoveTowards (transform.position, new Vector2(PlayerInstance.Current.transform.position.x, transform.position.y), speed * Time.deltaTime);
+        if (ShouldUpdate())
+        {
+            transform.position = Vector2.MoveTowards (transform.position, 
+                new Vector2(PlayerInstance.Current.transform.position.x, transform.position.y), 
+                speed * Time.deltaTime);
+        }
+        else
+        {
+            Flee();
+        }
+    }
+
+    // TODO: Refactor this shit into abstract class some time later when there will be time.
+    public virtual bool ShouldUpdate()
+    {
+        return PlayerInstance.Current != null;
+    }
+
+    public virtual void Flee()
+    {
     }
 
     private void OnTriggerStay2D(Collider2D col)
