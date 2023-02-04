@@ -101,9 +101,11 @@ MonoBehaviour:
   frames:
   - {fileID: 21300000, guid: f63609f009126c0469af31befbb5e873, type: 3}
   - {fileID: 21300000, guid: f7a75f98968b9af44ae063d8c1f14024, type: 3}
+  - {fileID: 21300000, guid: b3f0061c10defea4195a58c0f41be911, type: 3}
   framesOverlaid:
   - {fileID: 21300000, guid: 2ef83d3b5d107234580eba7b13b2118a, type: 3}
   - {fileID: 21300000, guid: e00ca95adcfccd544943ff41720021d7, type: 3}
+  - {fileID: 21300000, guid: cdced982efc1e694483c1de60a98958b, type: 3}
   index: 0
 --- !u!95 &2017988171338840499
 Animator:
