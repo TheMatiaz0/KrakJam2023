@@ -8,14 +8,17 @@ public class LimitedHealingPoint : MonoBehaviour
     [SerializeField] private float capacity = 20;
     [SerializeField] private float cooldown = 50f;
     [SerializeField] private float healRate = 1f;
+    [SerializeField] private float refresh = 10f;
 
     private Coroutine healCoroutine;
     private bool playerIn;
     private Collider2D playerCol;
     private ParticleSystem particles;
+    private float initCapacity;
 
     private void Start()
     {
+        initCapacity = capacity;
         particles = GetComponent<ParticleSystem>();
     }
 
@@ -49,6 +52,10 @@ public class LimitedHealingPoint : MonoBehaviour
             else
             {
                 particles.Stop();
+                yield return new WaitForSeconds(refresh);
+                capacity = initCapacity;
+                particles.Play();
+                
             }
             yield return new WaitForSeconds(cooldown / 1000);
         }

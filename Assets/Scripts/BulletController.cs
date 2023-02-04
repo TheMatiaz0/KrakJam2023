@@ -20,9 +20,12 @@ public class BulletController : MonoBehaviour
     private Coroutine shootParticleCoroutine;
     private bool isInCooldown;
     private Transform cachecShootParticleParent;
+    private AudioSource shotgunSound;
 
     private void Start()
     {
+        shotgunSound = GetComponent<AudioSource>();
+        
         if (shootParticle != null)
             shootParticle.gameObject.SetActive(false);
     }
@@ -52,6 +55,7 @@ public class BulletController : MonoBehaviour
     public void Shoot(bool isPlayerShooter = true)
     {
         if (isInCooldown) return;
+        shotgunSound.Play();
         for (int i = -1; i < bulletsCount - 1; i++)
         {
             var bullet = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
