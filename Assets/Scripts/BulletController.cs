@@ -47,7 +47,7 @@ public class BulletController : MonoBehaviour
         }
     }
 
-    public void Shoot()
+    public void Shoot(bool isPlayerShooter = true)
     {
         if (isInCooldown) return;
         for (int i = 0; i < bulletsCount; i++)
@@ -65,7 +65,7 @@ public class BulletController : MonoBehaviour
 
             bullet.Owner = this.gameObject;
             bullet.Damage = bulletDamage;
-            bullet.Rb2D.AddForce(bullet.transform.right * bulletSpeed, ForceMode2D.Impulse);
+            bullet.Rb2D.AddForce((isPlayerShooter ? bullet.transform.right : (PlayerInstance.Current.transform.position - this.transform.position).normalized) * bulletSpeed, ForceMode2D.Impulse);
             StartCoroutine(DestroyBullet(bullet.gameObject));
             Invoke(nameof(ResetCooldown), cooldown);
             isInCooldown = true;

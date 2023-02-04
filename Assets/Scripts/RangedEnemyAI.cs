@@ -43,6 +43,6 @@ public class RangedEnemyAI : EnemyAI
 
     private void Shoot()
     {
-        bulletController.Shoot();
+        bulletController.Shoot(false);
     }
 }
