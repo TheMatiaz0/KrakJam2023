@@ -14,20 +14,15 @@ public class BulletController : MonoBehaviour
     [SerializeField] private float cooldown = 0.5f;
     [SerializeField] private int bulletsCount;
     [SerializeField] private float spreadDegree = -21;
-    [SerializeField] private ParticleSystem shootParticle;
-    [SerializeField] private float particleTime = 0.3f;
 
     private Coroutine shootParticleCoroutine;
     private bool isInCooldown;
-    private Transform cachedShootParticleParent;
     private AudioSource shotgunSound;
 
     private void Start()
     {
-        shotgunSound = GetComponent<AudioSource>();
-
-        if (shootParticle != null)
-            shootParticle.gameObject.SetActive(false);
+        if (PlayerInstance.Current.gameObject == this.gameObject)
+            shotgunSound = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -44,11 +39,7 @@ public class BulletController : MonoBehaviour
     public void Shoot(bool isPlayerShooter = true)
     {
         if (isInCooldown) return;
-        if (isPlayerShooter)
-        {
-            shotgunSound.Play();
-        }
-
+        shotgunSound?.Play();
         for (int i = -1; i < bulletsCount - 1; i++)
         {
             var bullet = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
