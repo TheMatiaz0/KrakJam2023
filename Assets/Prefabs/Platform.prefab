@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 1862094092792798748}
   m_Layer: 0
   m_Name: AI_TriggerJump
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
