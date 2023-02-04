@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2501386219ae8d478aff8cbcae9718b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  col: {fileID: 0}
+  col: {fileID: 338949149983746937}
   maxSpeed: 5
   minSpeed: 0.1
   initialJump: 3
@@ -531,4 +531,4 @@ MonoBehaviour:
   bulletDamage: 1
   cooldown: 0.5
   bulletsCount: 3
-  spread: 1
+  spreadDegree: -21

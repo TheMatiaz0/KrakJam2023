@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1111728312876623873, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2429969049254813273, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
       propertyPath: m_Name
       value: Enemy Ranged Variant
@@ -22,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2429969049254813276, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2429969049254813276, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
       propertyPath: m_LocalPosition.z
@@ -86,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6526e9b30645f124c83a54b524b12fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   jump: 2
   jumpCooldown: 2
+  maxDelta: 5

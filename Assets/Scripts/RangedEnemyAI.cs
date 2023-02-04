@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class RangedEnemyAI : EnemyAI
 {
+    [SerializeField] private float maxDelta = 5;
+    
     public override bool ShouldUpdate()
     {
-        return base.ShouldUpdate() && GetDelta() > 5;
+        return base.ShouldUpdate() && GetDelta() > maxDelta;
     }
 
     public override void Flee()
@@ -16,6 +18,6 @@ public class RangedEnemyAI : EnemyAI
 
     private float GetDelta()
     {
-        return (PlayerInstance.Current.transform.position.x - this.transform.position.x);
+        return Mathf.Abs(PlayerInstance.Current.transform.position.x - this.transform.position.x);
     }
 }
