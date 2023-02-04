@@ -17,7 +17,7 @@ public class HpEntity : MonoBehaviour
         set
         {
             #if UNITY_EDITOR
-            Debug.Log($"{this.gameObject.name} has now <color=red>{value} HP</color>", this.gameObject);
+            //Debug.Log($"{this.gameObject.name} has now <color=red>{value} HP</color>", this.gameObject);
             #endif
             _hp = Mathf.Clamp(value, 0, maxHp);
             if (_hp <= 0 || _hp >= 100)
@@ -44,5 +44,13 @@ public class HpEntity : MonoBehaviour
             OnEnemyDied?.Invoke();
         }
         Destroy(this.gameObject);
+    }
+
+    private void Update()
+    {
+        if (transform.position.y < -50)
+        {
+            Death();
+        }
     }
 }
