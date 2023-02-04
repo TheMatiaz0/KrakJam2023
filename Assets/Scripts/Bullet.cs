@@ -9,13 +9,14 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D Rb2D => rb2D;
 
     public GameObject Owner { get; set; }
+    public int Damage { get; set; }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         Destroy(this.gameObject);
         if (col.TryGetComponent<HpEntity>(out var entity) && col.gameObject != Owner)
         {
-            entity.Hp--;
+            entity.Hp -= Damage;
         }
     }
 }
