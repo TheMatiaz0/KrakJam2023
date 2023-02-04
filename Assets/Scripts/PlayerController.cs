@@ -7,7 +7,6 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float treeRatio = 0.1f;
     [SerializeField] private float maxSpeed = 5;
     [SerializeField] private float minSpeed = 0.1f;
     [SerializeField] private float initialJump = 3;
@@ -16,11 +15,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpGranuality = 20;
     
     private Rigidbody2D body;
+    private SpriteRenderer sprite;
+    //private HpEntity hp;
     private int framesSinceFloor = 0;
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
+        //hp = GetComponent<HpEntity>();
     }
     
     private void OnTriggerStay2D(Collider2D other)
@@ -30,8 +33,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        var speed = Mathf.Lerp(maxSpeed, minSpeed, treeRatio);
-        
+       // var speed = Mathf.Lerp(maxSpeed, minSpeed, hp.Hp / (float)hp.HpMax);
+       var speed = 5f;
         body.velocity = new Vector2(0, body.velocity.y);
         if (Input.GetKey(KeyCode.D))
         {
@@ -52,5 +55,8 @@ public class PlayerController : MonoBehaviour
         }
         
         framesSinceFloor += 1;
+        
+        //sprite.material.SetFloat("Blend", hp.Hp / (float)hp.HpMax);
+        //Debug.Log(hp.Hp / (float)hp.HpMax);
     }
 }

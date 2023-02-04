@@ -6,6 +6,7 @@ using UnityEngine;
 public class HpEntity : MonoBehaviour
 {
     [SerializeField] private int maxHp = 2;
+    [SerializeField] private int startHp = 2;
 
     private int _hp;
     public int Hp
@@ -13,10 +14,14 @@ public class HpEntity : MonoBehaviour
         get => _hp;
         set
         {
+<<<<<<< Updated upstream
             #if UNITY_EDITOR
             Debug.Log($"{this.gameObject.name} has now <color=red>{value} HP</color>", this.gameObject);
             #endif
             _hp = value;
+=======
+            _hp = Mathf.Clamp(value, 0, maxHp);
+>>>>>>> Stashed changes
             if (_hp <= 0)
             {
                 Death();
@@ -24,9 +29,14 @@ public class HpEntity : MonoBehaviour
         }
     }
 
+    public int HpMax
+    {
+        get => maxHp;
+    }
+
     private void Start()
     {
-        Hp = maxHp;
+        Hp = startHp;
     }
 
     private void Death()
