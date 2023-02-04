@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     
     public float speed = 1;
     public float jump = 2;
+    public float jumpCooldown = 2;
 
     private void Start()
     {
@@ -21,8 +22,14 @@ public class EnemyAI : MonoBehaviour
         transform.position = Vector2.MoveTowards (transform.position, new Vector2(PlayerInstance.Current.transform.position.x, transform.position.y), speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
-        // body.velocity = Vector2.up * jump;
+        StartCoroutine(JumpWithDelay());
+    }
+
+    private IEnumerator JumpWithDelay()
+    {
+        body.velocity = Vector2.up * jump;
+        yield return new WaitForSeconds(jumpCooldown);
     }
 }
