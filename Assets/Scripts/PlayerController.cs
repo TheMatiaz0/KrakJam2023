@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-       var speed = Mathf.Lerp(maxSpeed, minSpeed, hp.Hp / (float)hp.HpMax);
+       var speed = Mathf.Lerp(maxSpeed, minSpeed, hp.Hp / hp.HpMax);
        
         body.velocity = new Vector2(0, body.velocity.y);
         if (Input.GetKey(KeyCode.D))
@@ -58,6 +58,6 @@ public class PlayerController : MonoBehaviour
         
         framesSinceFloor += 1;
         
-        sprite.material.SetFloat("_Blend", hp.Hp / (float)hp.HpMax);
+        sprite.material.SetFloat("_Blend", hp.Hp / hp.HpMax);
     }
 }

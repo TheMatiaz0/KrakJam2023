@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5897621697239390877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3512553615779034744}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3512553615779034744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5897621697239390877}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.509, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4261824931909439074}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1917953774309822526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,11 +93,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2429969049254813278, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 33.72
+      value: 1.1240001
       objectReference: {fileID: 0}
     - target: {fileID: 2429969049254813278, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 35.001804
+      value: 1.1667268
       objectReference: {fileID: 0}
     - target: {fileID: 2429969049254813279, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
       propertyPath: m_Sprite
@@ -87,12 +118,23 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 369528090907900157, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2429969049254813276, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3512553615779034744}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2429969049254813273, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3651351460458083935}
+    - targetCorrespondingSourceObject: {fileID: 2429969049254813273, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1579035255968503932}
   m_SourcePrefab: {fileID: 100100000, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
+--- !u!4 &4261824931909439074 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2429969049254813276, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
+  m_PrefabInstance: {fileID: 1917953774309822526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4261824931909439079 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2429969049254813273, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
@@ -114,5 +156,27 @@ MonoBehaviour:
   jump: 2
   jumpCooldown: 2
   maxDelta: 5
-  enemyBulletPrefab: {fileID: 0}
-  bulletController: {fileID: 0}
+  enemyBulletPrefab: {fileID: 1858808566382492793, guid: dbac0b5ed8254324abf15d53ce000b78, type: 3}
+  bulletController: {fileID: 1579035255968503932}
+--- !u!114 &1579035255968503932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4261824931909439079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e7a51c25840d5f45b9315d746e76c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 5458553362765678241, guid: dbac0b5ed8254324abf15d53ce000b78, type: 3}
+  firePoint: {fileID: 3512553615779034744}
+  bulletSpeed: 200
+  bulletTimeToDisappear: 1
+  bulletDamage: 1
+  cooldown: 0.5
+  bulletsCount: 1
+  spreadDegree: 0
+  shootParticle: {fileID: 0}
+  particleTime: 0.3
