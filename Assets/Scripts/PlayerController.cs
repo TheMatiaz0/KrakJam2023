@@ -47,6 +47,11 @@ public class PlayerController : MonoBehaviour
             }
         
         #endif
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit(0);
+        }
         
         var jumpBoost = (0.5f - hp.Hp / hp.HpMax) * 2;
         var speed = Mathf.Lerp(maxSpeed, minSpeed, hp.Hp / hp.HpMax);
