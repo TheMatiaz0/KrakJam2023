@@ -17,8 +17,12 @@ public class RangedEnemyAI : EnemyAI
 
     public override void Flee()
     {
-        var dt = -(PlayerInstance.Current.transform.position.x - this.transform.position.x);
-        transform.position = Vector2.MoveTowards(transform.position, new Vector2(dt, transform.position.y), speed * Time.deltaTime);
+        if (PlayerInstance.Current != null)
+        {
+            var dt = -(PlayerInstance.Current.transform.position.x - this.transform.position.x);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(dt, transform.position.y), 
+                speed * Time.deltaTime);
+        }
     }
 
     public override void ExtendUpdate()
