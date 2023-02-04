@@ -57,6 +57,5 @@ public class PlayerController : MonoBehaviour
         framesSinceFloor += 1;
         
         sprite.material.SetFloat("_Blend", hp.Hp / (float)hp.HpMax);
-        Debug.Log(hp.Hp / (float)hp.HpMax);
     }
 }
