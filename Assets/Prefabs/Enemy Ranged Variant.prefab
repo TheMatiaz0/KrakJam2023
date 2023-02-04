@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2608059062298424418, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
+      propertyPath: durationToFullRotate
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 369528090907900157, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
     m_RemovedGameObjects: []
