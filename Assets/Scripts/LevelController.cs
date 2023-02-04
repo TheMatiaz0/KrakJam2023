@@ -19,10 +19,14 @@ public class LevelController : MonoBehaviour
         if (winTimer >= winTimerThreshold && !_done)
         {
             _done = true;
-            //rób rzeczy
+            GetComponentInChildren<SpawnerGroup>().gameObject.SetActive(false);
+        }
+
+        if (_done && GameObject.FindGameObjectsWithTag("Enemi").Length == 0)
+        {
+            Debug.Log("WIN");
         }
 
         winTimer += Time.deltaTime;
-
     }
 }
