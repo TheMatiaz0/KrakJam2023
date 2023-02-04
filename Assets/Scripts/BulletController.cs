@@ -19,6 +19,7 @@ public class BulletController : MonoBehaviour
 
     private Coroutine shootParticleCoroutine;
     private bool isInCooldown;
+    private Transform cachecShootParticleParent;
 
     private void Start()
     {
@@ -42,6 +43,7 @@ public class BulletController : MonoBehaviour
         yield return new WaitForSeconds(particleTime);
         if (shootParticle != null)
         {
+            shootParticle.transform.SetParent(cachecShootParticleParent);
             shootParticle.gameObject.SetActive(false);
             shootParticleCoroutine = null;
         }
@@ -58,6 +60,7 @@ public class BulletController : MonoBehaviour
 
             if (shootParticle != null)
             {
+                shootParticle.transform.SetParent(null);
                 shootParticle.gameObject.SetActive(true);
                 if (shootParticleCoroutine == null)
                     shootParticleCoroutine = StartCoroutine(ParticleWithCooldown());
