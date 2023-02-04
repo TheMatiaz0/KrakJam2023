@@ -6,7 +6,7 @@ public class RangedEnemyAI : EnemyAI
 {
     public override bool ShouldUpdate()
     {
-        return base.ShouldUpdate() && GetDelta() < 5;
+        return base.ShouldUpdate() && GetDelta() > 5;
     }
 
     public override void Flee()
