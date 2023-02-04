@@ -13,16 +13,26 @@ public class ScoreDisplayer : MonoBehaviour
     private int ScorePoints
     {
         get => _scorePoints;
-        set => _scorePoints = value;
+        set
+        {
+            _scorePoints = value;
+            scoreText.text = value.ToString();
+        }
     }
 
     private void Start()
     {
+        ScorePoints = 0;
         HpEntity.OnEnemyDied += OnEnemyDied;
+    }
+
+    private void OnDestroy()
+    {
+        HpEntity.OnEnemyDied -= OnEnemyDied;
     }
 
     private void OnEnemyDied()
     {
-        // scorePoints += 1;
+        ScorePoints += scoreForKilling;
     }
 }
