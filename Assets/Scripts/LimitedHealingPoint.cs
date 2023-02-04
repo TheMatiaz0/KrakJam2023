@@ -36,7 +36,13 @@ public class LimitedHealingPoint : MonoBehaviour
         playerCol = col;
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        playerIn = true;
+        playerCol = col;
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
     {
         playerIn = false;
         sound.Stop();
