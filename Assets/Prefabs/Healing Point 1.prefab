@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30668da0f9b0f0d4fb043fc431d6dc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capacity: 20
+  capacity: 5
   cooldown: 50
   healRate: 1
 --- !u!198 &5855055794245794914
