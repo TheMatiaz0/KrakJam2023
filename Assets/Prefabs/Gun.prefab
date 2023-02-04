@@ -135,6 +135,8 @@ MonoBehaviour:
   firePoint: {fileID: 4633426931935397143}
   bulletSpeed: 250
   bulletTimeToDisappear: 1
+  bulletDamage: 1
+  cooldown: 0.5
 --- !u!1 &6768353653453541947
 GameObject:
   m_ObjectHideFlags: 0

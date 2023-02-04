@@ -8,16 +8,28 @@ public class BulletController : MonoBehaviour
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private Transform firePoint;
 
-    [SerializeField] private float bulletSpeed;
-    [SerializeField] private float bulletTimeToDisappear;
+    [SerializeField] private float bulletSpeed = 200;
+    [SerializeField] private float bulletTimeToDisappear = 1;
+    [SerializeField] private int bulletDamage = 1;
+    [SerializeField] private float cooldown = 0.5f;
 
+    private bool isInCooldown;
+    
     private void Update()
     {
-        if (!Input.GetMouseButtonDown(0)) return;
+        if (!Input.GetMouseButtonDown(0) || isInCooldown) return;
         var bullet = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
         bullet.Owner = this.gameObject;
+        bullet.Damage = bulletDamage;
         bullet.Rb2D.AddForce(bullet.transform.right * bulletSpeed, ForceMode2D.Impulse);
         StartCoroutine(DestroyBullet(bullet.gameObject));
+        Invoke(nameof(ResetCooldown), cooldown);
+        isInCooldown = true;
+    }
+
+    private void ResetCooldown()
+    {
+        isInCooldown = false;
     }
 
     private IEnumerator DestroyBullet(GameObject bullet)
