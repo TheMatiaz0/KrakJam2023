@@ -6,7 +6,7 @@ using UnityEngine;
 public class LimitedHealingPoint : MonoBehaviour
 {
     [SerializeField] private float capacity = 20;
-    [SerializeField] private float cooldown = 100f;
+    [SerializeField] private float cooldown = 50f;
     [SerializeField] private float healRate = 1f;
 
     private Coroutine healCoroutine;
