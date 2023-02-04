@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             var enemy = Instantiate(enemyPrefab, this.transform);
+            enemy.name = $"Enemy_{Random.Range(0, 9999)}";
         }
     }
 }
