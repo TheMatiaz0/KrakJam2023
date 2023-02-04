@@ -13,13 +13,11 @@ public class BulletController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            var bullet = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
-            
-            bullet.Rb2D.AddForce(bullet.transform.right * bulletSpeed, ForceMode2D.Impulse);
-            StartCoroutine(DestroyBullet(bullet.gameObject));
-        }
+        if (!Input.GetMouseButtonDown(0)) return;
+        var bullet = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
+        bullet.Owner = this.gameObject;
+        bullet.Rb2D.AddForce(bullet.transform.right * bulletSpeed, ForceMode2D.Impulse);
+        StartCoroutine(DestroyBullet(bullet.gameObject));
     }
 
     private IEnumerator DestroyBullet(GameObject bullet)

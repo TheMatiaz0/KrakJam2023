@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HpEntity : MonoBehaviour
 {
-    [SerializeField] private int maxHp;
+    [SerializeField] private int maxHp = 2;
 
     private int _hp;
     public int Hp
