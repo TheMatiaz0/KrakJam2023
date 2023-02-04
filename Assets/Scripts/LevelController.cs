@@ -11,12 +11,13 @@ public class LevelController : MonoBehaviour
     {
         get => _done;
     }
-    private float winTimer = 0;
-    
+
+    public float WinTimer { get; private set; }
+
     // Update is called once per frame
     void Update()
     {
-        if (winTimer >= winTimerThreshold && !_done)
+        if (WinTimer >= winTimerThreshold && !_done)
         {
             _done = true;
             GetComponentInChildren<SpawnerGroup>().gameObject.SetActive(false);
@@ -27,6 +28,6 @@ public class LevelController : MonoBehaviour
             Debug.Log("WIN");
         }
 
-        winTimer += Time.deltaTime;
+        WinTimer += Time.deltaTime;
     }
 }
