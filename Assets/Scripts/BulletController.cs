@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private Transform firePoint;
 
     [SerializeField] private float bulletSpeed;
@@ -16,9 +16,9 @@ public class BulletController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             var bullet = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
-            var rb2D = bullet.GetComponent<Rigidbody2D>();
-            rb2D.AddForce(bullet.transform.right * bulletSpeed, ForceMode2D.Impulse);
-            StartCoroutine(DestroyBullet(bullet));
+            
+            bullet.Rb2D.AddForce(bullet.transform.right * bulletSpeed, ForceMode2D.Impulse);
+            StartCoroutine(DestroyBullet(bullet.gameObject));
         }
     }
 
