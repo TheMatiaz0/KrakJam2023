@@ -55,7 +55,6 @@ public class BulletController : MonoBehaviour
     public void Shoot(bool isPlayerShooter = true)
     {
         if (isInCooldown) return;
-        shotgunSound.Play();
         for (int i = -1; i < bulletsCount - 1; i++)
         {
             var bullet = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
@@ -79,6 +78,7 @@ public class BulletController : MonoBehaviour
             Invoke(nameof(ResetCooldown), cooldown);
             isInCooldown = true;
         }
+        shotgunSound.Play();
     }
 
     private void ResetCooldown()

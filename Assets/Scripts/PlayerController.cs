@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        var jumpBoost = 0.5f - hp.Hp / hp.HpMax;
         var speed = Mathf.Lerp(maxSpeed, minSpeed, hp.Hp / hp.HpMax);
         anim.speed = 1 - (hp.Hp / hp.HpMax);
        
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetKey(KeyCode.Space) && framesSinceFloor == 0)
         {
-            body.velocity = Vector2.up * initialJump;
+            body.velocity = Vector2.up * (initialJump + jumpBoost);
         }
         else if (Input.GetKey(KeyCode.Space) && framesSinceFloor < jumpGranuality)
         {

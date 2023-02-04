@@ -3999,12 +3999,16 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2509280749417219659, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
+      propertyPath: minSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2509280749417219659, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
       propertyPath: initialJump
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2509280749417219659, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
       propertyPath: jumpStrength
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8059440692773276445, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
       propertyPath: cooldown
