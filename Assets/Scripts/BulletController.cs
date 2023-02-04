@@ -50,7 +50,7 @@ public class BulletController : MonoBehaviour
     public void Shoot(bool isPlayerShooter = true)
     {
         if (isInCooldown) return;
-        for (int i = 0; i < bulletsCount; i++)
+        for (int i = -1; i < bulletsCount - 1; i++)
         {
             var bullet = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
 
@@ -65,6 +65,7 @@ public class BulletController : MonoBehaviour
 
             bullet.Owner = this.gameObject;
             bullet.Damage = bulletDamage;
+            if (!PlayerInstance.Current) return;
             bullet.Rb2D.AddForce((isPlayerShooter ? bullet.transform.right : (PlayerInstance.Current.transform.position - this.transform.position).normalized) * bulletSpeed, ForceMode2D.Impulse);
             StartCoroutine(DestroyBullet(bullet.gameObject));
             Invoke(nameof(ResetCooldown), cooldown);

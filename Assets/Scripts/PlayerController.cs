@@ -21,12 +21,14 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sprite;
     private HpEntity hp;
     private int framesSinceFloor = 0;
+    private Animator anim;
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         hp = GetComponent<HpEntity>();
+        anim = GetComponentInChildren<Animator>();
     }
     
     private void OnTriggerStay2D(Collider2D other)
@@ -39,13 +41,23 @@ public class PlayerController : MonoBehaviour
        var speed = Mathf.Lerp(maxSpeed, minSpeed, hp.Hp / hp.HpMax);
        
         body.velocity = new Vector2(0, body.velocity.y);
+        bool walking = false;
         if (Input.GetKey(KeyCode.D))
         {
+            walking = true;
+            anim.Play("Walk");
             body.velocity = new Vector2(speed, body.velocity.y);
         }
         if (Input.GetKey(KeyCode.A))
         {
+            walking = true;
+            anim.Play("Walk");
             body.velocity = new Vector2(-speed, body.velocity.y);
+        }
+
+        if (!walking)
+        {
+            anim.Play("Idle");
         }
         
         if (Input.GetKey(KeyCode.Space) && framesSinceFloor == 0)

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 431191160}
   - component: {fileID: 431191161}
+  - component: {fileID: 387669303776515796}
+  - component: {fileID: 2017988171338840499}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -73,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f63609f009126c0469af31befbb5e873, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5aed4f71f2a23734b998d61ba4870963, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,6 +86,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &387669303776515796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431191159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c46944dca74b2a429038a74d4ff8787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frames:
+  - {fileID: 21300000, guid: f63609f009126c0469af31befbb5e873, type: 3}
+  - {fileID: 21300000, guid: f7a75f98968b9af44ae063d8c1f14024, type: 3}
+  framesOverlaid:
+  - {fileID: 21300000, guid: 2ef83d3b5d107234580eba7b13b2118a, type: 3}
+  - {fileID: 21300000, guid: e00ca95adcfccd544943ff41720021d7, type: 3}
+  index: 0
+--- !u!95 &2017988171338840499
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431191159}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 666d123d23b7e2d42a8b71269822131d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1643705475
 GameObject:
   m_ObjectHideFlags: 0
@@ -5033,7 +5074,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 999
-  m_Sprite: {fileID: 21300000, guid: f6f1b025c6bc3f24d9ee42687d5c2921, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16a723a945669b044ba8e7cc337702b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
