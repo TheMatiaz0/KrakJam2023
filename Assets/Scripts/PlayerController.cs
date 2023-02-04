@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpStrength = 4;
     // The time space is held affects jump height.
     [SerializeField] private float jumpGranuality = 20;
+    [SerializeField] private SpriteRenderer armSprite;
     
     private Rigidbody2D body;
     private SpriteRenderer sprite;
@@ -57,7 +58,10 @@ public class PlayerController : MonoBehaviour
         }
         
         framesSinceFloor += 1;
-        
-        sprite.material.SetFloat("_Blend", hp.Hp / hp.HpMax);
+
+        float progress = hp.Hp / hp.HpMax;
+        float armStart = 0.6f;
+        sprite.material.SetFloat("_Blend", progress);
+        armSprite.material.SetFloat("_Blend", (progress - armStart) / (1-armStart));
     }
 }

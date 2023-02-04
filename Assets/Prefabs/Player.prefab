@@ -5250,6 +5250,7 @@ MonoBehaviour:
   initialJump: 3
   jumpStrength: 5
   jumpGranuality: 20
+  armSprite: {fileID: 1749947024}
 --- !u!114 &4403018798922881679
 MonoBehaviour:
   m_ObjectHideFlags: 0
