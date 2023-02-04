@@ -13,10 +13,13 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Destroy(this.gameObject);
-        if (col.TryGetComponent<HpEntity>(out var entity) && col.gameObject != Owner)
+        if (col.gameObject != Owner)
         {
-            entity.Hp -= Damage;
+            Destroy(this.gameObject);
+            if (col.TryGetComponent<HpEntity>(out var entity))
+            {
+                entity.Hp -= Damage;
+            }
         }
     }
 }
