@@ -11,8 +11,6 @@ public class EliteAdditionalBehaviour : MonoBehaviour
     [SerializeField] private float timeToDisappearHealing = 2;
     [SerializeField] private float timeForDynamicDrop = 1;
 
-    private Coroutine disappearHealCoroutine;
-
     private void Start()
     {
         HpEntity.OnEnemyDied += OnEnemyDied;

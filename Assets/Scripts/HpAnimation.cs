@@ -13,14 +13,19 @@ public class HpAnimation : MonoBehaviour
     
     private void Start()
     {
+        spriteColor = spriteRenderer.color;
         HpEntity.OnHurt += Hurt;
+    }
+
+    private void OnDestroy()
+    {
+        HpEntity.OnHurt -= Hurt;
     }
 
     private void Hurt(HpEntity entity)
     {
         if (entity == this.GetComponent<HpEntity>())
         {
-            spriteColor = spriteRenderer.color;
             spriteRenderer.DOColor(Color.red, animHurtDuration).SetEase(Ease.InOutQuad)
                 .OnComplete(() => spriteRenderer.DOColor(spriteColor, animHurtDuration).SetEase(Ease.InOutQuad)).SetLink(this.gameObject);
         }

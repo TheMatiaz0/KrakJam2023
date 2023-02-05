@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 2509280749417219659}
   - component: {fileID: 4403018798922881679}
   - component: {fileID: 2595267778849071434}
+  - component: {fileID: 1301514764238905710}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -492,6 +493,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b86b6b84045cfb4e969572b3176e4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1301514764238905710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419902865119307788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81f28d79110ffb4b8f20a50918dcd13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 431191161}
+  animHurtDuration: 1
 --- !u!1 &4619099910377802409
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,8 +592,6 @@ MonoBehaviour:
   cooldown: 0
   bulletsCount: 3
   spreadDegree: -10
-  shootParticle: {fileID: 0}
-  particleTime: 0.5
 --- !u!82 &721749913
 AudioSource:
   m_ObjectHideFlags: 0
