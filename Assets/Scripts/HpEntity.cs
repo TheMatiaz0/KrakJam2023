@@ -13,6 +13,7 @@ public class HpEntity : MonoBehaviour
     [SerializeField] private float startHp = 10;
     [SerializeField] private AudioSource soundSource;
     [SerializeField] private AudioClip deathSound;
+    [SerializeField] private float maxPositionY = -40;
 
     private bool isDead;
 
@@ -75,7 +76,7 @@ public class HpEntity : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.y < -50)
+        if (transform.position.y < maxPositionY)
         {
             Death();
         }

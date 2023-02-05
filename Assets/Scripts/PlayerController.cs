@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // The time space is held affects jump height.
     [SerializeField] private float jumpGranuality = 20;
     [SerializeField] private SpriteRenderer armSprite;
-    
+
     private Rigidbody2D body;
     private SpriteRenderer sprite;
     private HpEntity hp;
