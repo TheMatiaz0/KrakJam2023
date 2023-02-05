@@ -59,13 +59,13 @@ public class PlayerController : MonoBehaviour
        
         body.velocity = new Vector2(0, body.velocity.y);
         bool walking = false;
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey((KeyCode.RightArrow)))
         {
             walking = true;
             anim.Play("Walk");
             body.velocity = new Vector2(speed, body.velocity.y);
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey((KeyCode.LeftArrow)))
         {
             walking = true;
             anim.Play("Walk");
@@ -77,11 +77,11 @@ public class PlayerController : MonoBehaviour
             anim.Play("Idle");
         }
         
-        if (Input.GetKey(KeyCode.Space) && framesSinceFloor == 0)
+        if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)) && framesSinceFloor == 0)
         {
             body.velocity = Vector2.up * (initialJump + jumpBoost);
         }
-        else if (Input.GetKey(KeyCode.Space) && framesSinceFloor < jumpGranuality)
+        else if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)) && framesSinceFloor < jumpGranuality)
         {
             body.velocity += Vector2.up * (jumpStrength / jumpGranuality);
         }
