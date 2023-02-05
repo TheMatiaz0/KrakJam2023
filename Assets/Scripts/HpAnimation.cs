@@ -26,7 +26,6 @@ public class HpAnimation : MonoBehaviour
 
     private void Hurt(HpEntity entity)
     {
-        Debug.Log("Test 33");
         if (entity == this.GetComponent<HpEntity>())
         {
             soundSource.PlayOneShot(hurtSound);

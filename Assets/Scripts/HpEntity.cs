@@ -23,6 +23,10 @@ public class HpEntity : MonoBehaviour
             #if UNITY_EDITOR
             //Debug.Log($"{this.gameObject.name} has now <color=red>{value} HP</color>", this.gameObject);
             #endif
+            if (value == _hp)
+            {
+                return;
+            }
             if (value < _hp)
             {
                 OnHurt?.Invoke(this);
