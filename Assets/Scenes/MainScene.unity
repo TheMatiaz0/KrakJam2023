@@ -9205,6 +9205,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireParticle
       objectReference: {fileID: 0}
+    - target: {fileID: 1749947024, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749947024, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749947024, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2064898463
+      objectReference: {fileID: 0}
     - target: {fileID: 1419902865119307788, guid: 8471208e5e139e14d99b120a5b564bab, type: 3}
       propertyPath: m_Name
       value: Player
