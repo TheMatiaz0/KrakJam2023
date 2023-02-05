@@ -8,12 +8,21 @@ public class TimeDisplayer : MonoBehaviour
 {
     [SerializeField] private Text timeText;
     [SerializeField] private LevelController lvlController;
+
+    [SerializeField] private int minutesToSurvive = 5;
     
     private void Update()
     {
-        // why this piece of shit doesn't always work like it should
         var p1 = TimeSpan.FromSeconds(lvlController.WinTimer);
-        var p2 = TimeSpan.FromMinutes(15);
-        timeText.text = (p2 - p1).ToString(@"mm\:ss\.fff");
+        var p2 = TimeSpan.FromMinutes(minutesToSurvive);
+        var dt = (p2 - p1).Seconds;
+        if (dt >= 0)
+        {
+            timeText.text = dt.ToString(@"mm\:ss\.fff");
+        }
+        else
+        {
+            timeText.text = "Survived";
+        }
     }
 }
