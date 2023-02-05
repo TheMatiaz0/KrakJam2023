@@ -200,7 +200,7 @@ Transform:
   - {fileID: 6443207765942009088}
   - {fileID: 1351837583}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1720239462964443575
 SpriteRenderer:
@@ -243,7 +243,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9ae8c3f8e7e98d4e9d1e86e97a90857, type: 3}
   m_Color: {r: 0.4339623, g: 0.01842292, b: 0.01842292, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -290,7 +290,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 5, y: 5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -342,6 +342,7 @@ MonoBehaviour:
   cooldown: 50
   healRate: 4
   refresh: 10
+  root: {fileID: 1351837582}
 --- !u!198 &5855055794245794914
 ParticleSystem:
   m_ObjectHideFlags: 0
