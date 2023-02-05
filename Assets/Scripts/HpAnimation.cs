@@ -29,7 +29,9 @@ public class HpAnimation : MonoBehaviour
         Debug.Log("Test 33");
         if (entity == this.GetComponent<HpEntity>())
         {
-            spriteRenderer.DOColor(Color.yellow, animHurtDuration).SetEase(Ease.InOutQuad)
+            soundSource.PlayOneShot(hurtSound);
+            if (spriteRenderer.gameObject != null)
+                spriteRenderer.DOColor(Color.yellow, animHurtDuration).SetEase(Ease.InOutQuad)
                 .OnComplete(() => spriteRenderer.DOColor(spriteColor, animHurtDuration).SetEase(Ease.InOutQuad)).SetLink(this.gameObject);
         }
     }

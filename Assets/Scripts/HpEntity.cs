@@ -12,7 +12,7 @@ public class HpEntity : MonoBehaviour
     [SerializeField] private float maxHp = 100;
     [SerializeField] private float startHp = 10;
 
-    private bool IsDead => _hp <= 0;
+    private bool isDead;
 
     private float _hp;
     public float Hp
@@ -47,7 +47,7 @@ public class HpEntity : MonoBehaviour
 
     private void Death()
     {
-        if (PlayerInstance.Current != null && !IsDead)
+        if (PlayerInstance.Current != null && !isDead)
         {
             if (PlayerInstance.Current.gameObject != this.gameObject)
             {
@@ -57,6 +57,7 @@ public class HpEntity : MonoBehaviour
             {
                 OnPlayerDied?.Invoke();
             }
+            isDead = true;
         }
 
         Destroy(this.gameObject);
