@@ -18,6 +18,7 @@ public class LimitedHealingPoint : MonoBehaviour
     private ParticleSystem particles;
     private float initCapacity;
     private AudioSource sound;
+    private bool depleted = false;
 
     private void Start()
     {
@@ -31,8 +32,8 @@ public class LimitedHealingPoint : MonoBehaviour
         if (playerIn && healCoroutine == null)
             healCoroutine = StartCoroutine(HealWithCooldown(playerCol));
         if(!playerIn)
-            root.material.DOFloat(0, "_Grow", 1);
-        
+            root.material.DOFloat(depleted ? -0.5f : 0, "_Grow", 1);
+         
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -73,11 +74,13 @@ public class LimitedHealingPoint : MonoBehaviour
             }
             else
             {
-                root.material.DOFloat(0, "_Grow", 1);
+                depleted = true;
+                root.material.DOFloat(-0.5f, "_Grow", 1);
                 
                 sound.Stop();
                 particles.Stop();
                 yield return new WaitForSeconds(refresh);
+                depleted = false;
                 capacity = initCapacity;
                 particles.Play();
                 
