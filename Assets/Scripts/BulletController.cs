@@ -50,13 +50,12 @@ public class BulletController : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
 
             bullet.transform.Rotate(new Vector3(0, 0, i * spreadDegree));
-            
+
             bullet.Owner = this.gameObject;
             bullet.Damage = bulletDamage;
             if (!PlayerInstance.Current) return;
             bullet.Rb2D.AddForce((isPlayerShooter ? bullet.transform.right : (PlayerInstance.Current.transform.position - this.transform.position).normalized) * bulletSpeed, ForceMode2D.Impulse);
             StartCoroutine(DestroyBullet(bullet.gameObject));
-            CinemachineShake.Current.ShakeCamera(5, 0.1f);
             Invoke(nameof(ResetCooldown), cooldown);
             isInCooldown = true;
         }
