@@ -484,6 +484,7 @@ MonoBehaviour:
   startHp: 10
   soundSource: {fileID: 0}
   deathSound: {fileID: 0}
+  maxPositionY: -40
 --- !u!114 &2595267778849071434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,10 +689,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7513316500060201323, guid: c432175227c688b4e8a4af7becea4127, type: 3}
   firePoint: {fileID: 8803633061586923066}
-  bulletSpeed: 600
-  bulletTimeToDisappear: 2
+  bulletSpeed: 750
+  bulletTimeToDisappear: 4
   bulletDamage: 1
-  cooldown: 0
+  cooldown: 0.5
   bulletsCount: 3
   spreadDegree: -10
   soundSource: {fileID: 721749913}
