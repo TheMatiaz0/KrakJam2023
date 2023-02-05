@@ -15,8 +15,8 @@ public class TimeDisplayer : MonoBehaviour
     {
         var p1 = TimeSpan.FromSeconds(lvlController.WinTimer);
         var p2 = TimeSpan.FromMinutes(minutesToSurvive);
-        var dt = (p2 - p1).Seconds;
-        if (dt >= 0)
+        var dt = (p2 - p1);
+        if (dt.Seconds >= 0)
         {
             timeText.text = dt.ToString(@"mm\:ss\.fff");
         }
