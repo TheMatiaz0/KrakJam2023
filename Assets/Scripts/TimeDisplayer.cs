@@ -15,11 +15,11 @@ public class TimeDisplayer : MonoBehaviour
         var dt = (p2 - p1);
         if (dt.Seconds >= 0)
         {
-            timeText.text = dt.ToString(@"mm\:ss\.fff");
+            timeText.text = $"Survive {dt.ToString(@"mm\:ss\.fff")}";
         }
         else
         {
-            timeText.text = "";
+            timeText.text = "Kill all enemies";
         }
     }
 }
