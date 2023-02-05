@@ -32,7 +32,7 @@ public class LimitedHealingPoint : MonoBehaviour
         if (playerIn && healCoroutine == null)
             healCoroutine = StartCoroutine(HealWithCooldown(playerCol));
         if(!playerIn)
-            root.material.DOFloat(depleted ? -0.5f : 0, "_Grow", 1);
+            root.material.DOFloat(depleted ? -0.5f : 0, "_Grow", 1).SetLink(this.gameObject);
          
     }
 
