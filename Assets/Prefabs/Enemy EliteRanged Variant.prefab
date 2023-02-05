@@ -119,9 +119,6 @@ PrefabInstance:
       addedObject: {fileID: 8097013530809609619}
     - targetCorrespondingSourceObject: {fileID: 2429969049254813273, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3909947914738211930}
-    - targetCorrespondingSourceObject: {fileID: 2429969049254813273, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3918821496218754513}
   m_SourcePrefab: {fileID: 100100000, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
 --- !u!1 &5143888815587111449 stripped
@@ -171,21 +168,6 @@ MonoBehaviour:
   spreadDegree: -45
   soundSource: {fileID: 3918821496218754513}
   shootSound: {fileID: 8300000, guid: 17723d0da601151488fad7db3c99bb44, type: 3}
---- !u!114 &3909947914738211930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5143888815587111449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67175b2d5abd4954b8ceee25a7befed6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healingPointPrefab: {fileID: 1720239462964443579, guid: 4a90e754d8e81ef4faf087e9567172d6, type: 3}
-  timeToDisappearHealing: 10
-  timeForDynamicDrop: 0.1
 --- !u!82 &3918821496218754513
 AudioSource:
   m_ObjectHideFlags: 0
