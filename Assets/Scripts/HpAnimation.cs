@@ -29,8 +29,12 @@ public class HpAnimation : MonoBehaviour
     {
         if (entity == this.GetComponent<HpEntity>())
         {
-            soundSource.PlayOneShot(hurtSound);
-            if (spriteRenderer.gameObject != null)
+            if (hurtSound != null)
+            {
+                soundSource.PlayOneShot(hurtSound);
+            }
+
+            if (spriteRenderer != null && spriteRenderer.gameObject != null)
                 spriteRenderer.DOColor(colorOnHurt, animHurtDuration).SetEase(Ease.InOutQuad)
                 .OnComplete(() => spriteRenderer.DOColor(spriteColor, animHurtDuration).SetEase(Ease.InOutQuad)).SetLink(this.gameObject);
         }
