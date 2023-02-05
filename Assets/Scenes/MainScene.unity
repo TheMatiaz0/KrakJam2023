@@ -389,6 +389,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 34272142034632661, guid: 755c4f67e5a0efa4e8aafe0a7d7fa826, type: 3}
+      propertyPath: spawns.Array.data[0]
+      value: 
+      objectReference: {fileID: 4261824931909439079, guid: d9bf0cacc397ce447afbbe8aa5048cb0, type: 3}
     - target: {fileID: 34272142034632663, guid: 755c4f67e5a0efa4e8aafe0a7d7fa826, type: 3}
       propertyPath: m_Name
       value: Spawner_1
@@ -2268,6 +2272,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 34272142034632661, guid: 755c4f67e5a0efa4e8aafe0a7d7fa826, type: 3}
+      propertyPath: spawns.Array.data[0]
+      value: 
+      objectReference: {fileID: 4261824931909439079, guid: d9bf0cacc397ce447afbbe8aa5048cb0, type: 3}
     - target: {fileID: 34272142034632663, guid: 755c4f67e5a0efa4e8aafe0a7d7fa826, type: 3}
       propertyPath: m_Name
       value: Spawner_2
