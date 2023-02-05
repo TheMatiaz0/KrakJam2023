@@ -592,6 +592,8 @@ MonoBehaviour:
   cooldown: 0
   bulletsCount: 3
   spreadDegree: -10
+  soundSource: {fileID: 721749913}
+  shootSound: {fileID: 8300000, guid: 25fe48d55756b7e4e9a5e7b87e3e82d8, type: 3}
 --- !u!82 &721749913
 AudioSource:
   m_ObjectHideFlags: 0
@@ -604,7 +606,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 25fe48d55756b7e4e9a5e7b87e3e82d8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0

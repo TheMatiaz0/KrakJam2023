@@ -15,6 +15,9 @@ public class BulletController : MonoBehaviour
     [SerializeField] private int bulletsCount;
     [SerializeField] private float spreadDegree = -21;
 
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip shootSound;
+
     private Coroutine shootParticleCoroutine;
     private bool isInCooldown;
 
@@ -32,6 +35,10 @@ public class BulletController : MonoBehaviour
     public void Shoot(bool isPlayerShooter = true)
     {
         if (isInCooldown) return;
+        if (shootSound != null)
+        {
+            soundSource.PlayOneShot(shootSound);
+        }
         for (int i = -1; i < bulletsCount - 1; i++)
         {
             var bullet = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
