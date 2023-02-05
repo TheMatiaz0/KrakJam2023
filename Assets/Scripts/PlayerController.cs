@@ -77,11 +77,11 @@ public class PlayerController : MonoBehaviour
             anim.Play("Idle");
         }
         
-        if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)) && framesSinceFloor == 0)
+        if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey((KeyCode.UpArrow))) && framesSinceFloor == 0)
         {
             body.velocity = Vector2.up * (initialJump + jumpBoost);
         }
-        else if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)) && framesSinceFloor < jumpGranuality)
+        else if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey((KeyCode.UpArrow))) && framesSinceFloor < jumpGranuality)
         {
             body.velocity += Vector2.up * (jumpStrength / jumpGranuality);
         }

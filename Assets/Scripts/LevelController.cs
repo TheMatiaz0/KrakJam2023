@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class LevelController : MonoBehaviour
 {
+    public event Action OnVictory;
     [SerializeField] private float winTimerThreshold = 300;
 
     private bool _done;
@@ -13,8 +15,7 @@ public class LevelController : MonoBehaviour
     }
 
     public float WinTimer { get; private set; }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (WinTimer >= winTimerThreshold && !_done)
@@ -25,7 +26,7 @@ public class LevelController : MonoBehaviour
 
         if (_done && GameObject.FindGameObjectsWithTag("Enemi").Length == 0)
         {
-            Debug.Log("WIN");
+            OnVictory?.Invoke();
         }
 
         WinTimer += Time.deltaTime;
