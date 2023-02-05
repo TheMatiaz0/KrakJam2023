@@ -11,6 +11,8 @@ public class HpEntity : MonoBehaviour
     
     [SerializeField] private float maxHp = 100;
     [SerializeField] private float startHp = 10;
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip deathSound;
 
     private bool isDead;
 
@@ -64,6 +66,10 @@ public class HpEntity : MonoBehaviour
             isDead = true;
         }
 
+        if (deathSound != null)
+        {
+            soundSource.PlayOneShot(deathSound);
+        }
         Destroy(this.gameObject);
     }
 
