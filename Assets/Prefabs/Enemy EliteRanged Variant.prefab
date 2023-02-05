@@ -162,7 +162,7 @@ MonoBehaviour:
   bulletDamage: 1
   cooldown: 0.5
   bulletsCount: 8
-  spreadDegree: -21
+  spreadDegree: -45
   soundSource: {fileID: 3918821496218754513}
   shootSound: {fileID: 8300000, guid: 17723d0da601151488fad7db3c99bb44, type: 3}
 --- !u!114 &3909947914738211930
@@ -178,8 +178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healingPointPrefab: {fileID: 1720239462964443579, guid: d3261a50fef2843438a546e3c0d07498, type: 3}
-  timeToDisappearHealing: 4
-  timeForDynamicDrop: 0.5
+  timeToDisappearHealing: 10
+  timeForDynamicDrop: 0.3
 --- !u!82 &3918821496218754513
 AudioSource:
   m_ObjectHideFlags: 0

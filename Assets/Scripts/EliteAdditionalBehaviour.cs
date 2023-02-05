@@ -32,13 +32,14 @@ public class EliteAdditionalBehaviour : MonoBehaviour
             rb2D.isKinematic = false;
             DOVirtual.DelayedCall/*jebac unity |: */(timeForDynamicDrop, () =>
             {
+                Debug.Log("tesfasfasgasgsagsagsagsag");
                 col.isTrigger = true;
                 rb2D.isKinematic = true;
-            });
+            }).SetLink(this.gameObject);
             DOVirtual.DelayedCall/*jebac unity |: */(timeToDisappearHealing, () =>
             {
                 Destroy(healingPoint.gameObject);
-            });
+            }).SetLink(this.gameObject);
         }
     }
 }

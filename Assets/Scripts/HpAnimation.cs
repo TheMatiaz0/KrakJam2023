@@ -8,6 +8,8 @@ public class HpAnimation : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float animHurtDuration;
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip hurtSound;
 
     private Color spriteColor;
     
@@ -24,9 +26,10 @@ public class HpAnimation : MonoBehaviour
 
     private void Hurt(HpEntity entity)
     {
+        Debug.Log("Test 33");
         if (entity == this.GetComponent<HpEntity>())
         {
-            spriteRenderer.DOColor(Color.red, animHurtDuration).SetEase(Ease.InOutQuad)
+            spriteRenderer.DOColor(Color.yellow, animHurtDuration).SetEase(Ease.InOutQuad)
                 .OnComplete(() => spriteRenderer.DOColor(spriteColor, animHurtDuration).SetEase(Ease.InOutQuad)).SetLink(this.gameObject);
         }
     }

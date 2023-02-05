@@ -12,6 +12,8 @@ public class HpEntity : MonoBehaviour
     [SerializeField] private float maxHp = 100;
     [SerializeField] private float startHp = 10;
 
+    private bool IsDead => _hp <= 0;
+
     private float _hp;
     public float Hp
     {
@@ -21,7 +23,7 @@ public class HpEntity : MonoBehaviour
             #if UNITY_EDITOR
             //Debug.Log($"{this.gameObject.name} has now <color=red>{value} HP</color>", this.gameObject);
             #endif
-            if (value < 0)
+            if (value < _hp)
             {
                 OnHurt?.Invoke(this);
             }
@@ -29,7 +31,6 @@ public class HpEntity : MonoBehaviour
             if (_hp <= 0 || _hp >= 100)
             {
                 Death();
-                _hp = 25; // wtf i dunno
             }
         }
     }
@@ -46,7 +47,7 @@ public class HpEntity : MonoBehaviour
 
     private void Death()
     {
-        if (PlayerInstance.Current != null)
+        if (PlayerInstance.Current != null && !IsDead)
         {
             if (PlayerInstance.Current.gameObject != this.gameObject)
             {
