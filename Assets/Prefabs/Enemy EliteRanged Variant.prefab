@@ -141,10 +141,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6526e9b30645f124c83a54b524b12fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  minSpeed: 3
+  maxSpeed: 6
   jump: 2
   jumpCooldown: 2
-  maxDelta: 5
+  minDistanceFromPlayer: 3
+  maxDistanceFromPlayer: 6
   enemyBulletPrefab: {fileID: 1858808566382492793, guid: dbac0b5ed8254324abf15d53ce000b78, type: 3}
   bulletController: {fileID: 8097013530809609619}
 --- !u!114 &8097013530809609619

@@ -4572,7 +4572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c6a0b0a814bb04abc6f25410c6b99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winTimerThreshold: 300
+  winTimerThreshold: 180
 --- !u!4 &1516000394
 Transform:
   m_ObjectHideFlags: 0
