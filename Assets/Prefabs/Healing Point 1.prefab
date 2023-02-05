@@ -156,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -9999
+  m_SortingOrder: 9999
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0.2646904, b: 1, a: 1}
   m_FlipX: 0
@@ -5061,7 +5061,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1c7b97573d85abd4da7ff7fca8ddf505, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9a93918c53e113440b00080a83bfa44b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
