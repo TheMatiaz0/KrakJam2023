@@ -1,5 +1,5 @@
-# KrakJam2023
-A KrakJam 2023 project. Currently unnamed.
+# Limbed Out
+A KrakJam 2023 project named as Limbed Out.
 
 The Team (sorted by join date):
 - Mateusz Kusionowicz (TheMatiaz0),
