@@ -157,7 +157,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 20
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.4339623, g: 0.01842292, b: 0.01842292, a: 1}
   m_FlipX: 0
@@ -447,7 +447,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.4198113, g: 0.64688545, b: 1, a: 1}
+      maxColor: {r: 0.15217757, g: 1, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5220,7 +5220,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 60
+  m_SortingOrder: 21
   m_Sprite: {fileID: 21300000, guid: c6a3d5e8f71590a4086d79d3acefe18b, type: 3}
   m_Color: {r: 0.191437, g: 1, b: 0, a: 1}
   m_FlipX: 0
