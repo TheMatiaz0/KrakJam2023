@@ -182,7 +182,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5458553362765678241, guid: dbac0b5ed8254324abf15d53ce000b78, type: 3}
   firePoint: {fileID: 3512553615779034744}
   bulletSpeed: 200
-  bulletTimeToDisappear: 1
+  bulletTimeToDisappear: 3
   bulletDamage: 1
   cooldown: 0.5
   bulletsCount: 1
