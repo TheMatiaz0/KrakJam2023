@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healingPointPrefab: {fileID: 1720239462964443579, guid: d3261a50fef2843438a546e3c0d07498, type: 3}
   timeToDisappearHealing: 10
-  timeForDynamicDrop: 0.3
+  timeForDynamicDrop: 0.1
 --- !u!82 &3918821496218754513
 AudioSource:
   m_ObjectHideFlags: 0

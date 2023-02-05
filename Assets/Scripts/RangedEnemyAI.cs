@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RangedEnemyAI : EnemyAI
 {
-    [SerializeField] private float maxDelta = 5;
+    [SerializeField] private float minDistanceFromPlayer = 3;
+    [SerializeField] private float maxDistanceFromPlayer = 6;
     [SerializeField] private GameObject enemyBulletPrefab;
     [SerializeField] private BulletController bulletController;
 
@@ -12,7 +13,7 @@ public class RangedEnemyAI : EnemyAI
     
     public override bool ShouldUpdate()
     {
-        return base.ShouldUpdate() && GetDelta() > maxDelta;
+        return base.ShouldUpdate() && GetDelta() > Random.Range(minDistanceFromPlayer, maxDistanceFromPlayer);
     }
 
     public override void Flee()
@@ -21,7 +22,7 @@ public class RangedEnemyAI : EnemyAI
         {
             var dt = -(PlayerInstance.Current.transform.position.x - this.transform.position.x);
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(dt, transform.position.y), 
-                speed * Time.deltaTime);
+                Random.Range(minSpeed, maxSpeed) * Time.deltaTime);
         }
     }
 

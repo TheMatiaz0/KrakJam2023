@@ -510,6 +510,7 @@ MonoBehaviour:
   animHurtDuration: 1
   soundSource: {fileID: 7405798314561486678}
   hurtSound: {fileID: 8300000, guid: 9f9fd715cd1e17a4884399630511a920, type: 3}
+  colorOnHurt: {r: 0.2924528, g: 0, b: 0, a: 1}
 --- !u!82 &7405798314561486678
 AudioSource:
   m_ObjectHideFlags: 0

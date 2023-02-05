@@ -20,6 +20,12 @@ public class BulletController : MonoBehaviour
 
     private Coroutine shootParticleCoroutine;
     private bool isInCooldown;
+    private PlayerInstance playerInstance;
+
+    private void Start()
+    {
+        playerInstance = GetComponentInParent<PlayerInstance>();
+    }
 
     private void Update()
     {
@@ -28,7 +34,7 @@ public class BulletController : MonoBehaviour
 
     private void UpdateInput()
     {
-        if (!Input.GetMouseButtonDown(0)) return;
+        if (!Input.GetMouseButtonDown(0) || playerInstance == null) return;
         Shoot();
     }
 

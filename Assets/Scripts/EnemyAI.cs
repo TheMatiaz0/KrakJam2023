@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float speed = 1;
+    public float minSpeed = 1;
+    public float maxSpeed = 4;
     public float jump = 2;
     public float jumpCooldown = 2;
     
@@ -24,7 +26,7 @@ public class EnemyAI : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards (transform.position, 
                 new Vector2(PlayerInstance.Current.transform.position.x, transform.position.y), 
-                speed * Time.deltaTime);
+                Random.Range(minSpeed, maxSpeed) * Time.deltaTime);
         }
         else
         {

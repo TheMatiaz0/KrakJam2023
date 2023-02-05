@@ -10,6 +10,7 @@ public class HpAnimation : MonoBehaviour
     [SerializeField] private float animHurtDuration;
     [SerializeField] private AudioSource soundSource;
     [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private Color colorOnHurt = Color.gray;
 
     private Color spriteColor;
     
@@ -30,7 +31,7 @@ public class HpAnimation : MonoBehaviour
         {
             soundSource.PlayOneShot(hurtSound);
             if (spriteRenderer.gameObject != null)
-                spriteRenderer.DOColor(Color.yellow, animHurtDuration).SetEase(Ease.InOutQuad)
+                spriteRenderer.DOColor(colorOnHurt, animHurtDuration).SetEase(Ease.InOutQuad)
                 .OnComplete(() => spriteRenderer.DOColor(spriteColor, animHurtDuration).SetEase(Ease.InOutQuad)).SetLink(this.gameObject);
         }
     }
