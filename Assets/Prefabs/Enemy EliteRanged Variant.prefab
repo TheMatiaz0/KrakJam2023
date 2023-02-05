@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4056493995302259060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.375, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -91,6 +91,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 32d76f6e49068f346b7260c25835f4ba, type: 3}
+    - target: {fileID: 2608059062298424418, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
+      propertyPath: durationToFullRotate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7229726309975914664, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
       propertyPath: m_Radius
       value: 0.37
@@ -109,6 +113,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2429969049254813273, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8097013530809609619}
+    - targetCorrespondingSourceObject: {fileID: 2429969049254813273, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3909947914738211930}
   m_SourcePrefab: {fileID: 100100000, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}
 --- !u!1 &5143888815587111449 stripped
 GameObject:
@@ -151,8 +158,22 @@ MonoBehaviour:
   bulletTimeToDisappear: 1
   bulletDamage: 1
   cooldown: 0.5
-  bulletsCount: 3
+  bulletsCount: 8
   spreadDegree: -21
+--- !u!114 &3909947914738211930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143888815587111449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67175b2d5abd4954b8ceee25a7befed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healingPointPrefab: {fileID: 1720239462964443579, guid: d3261a50fef2843438a546e3c0d07498, type: 3}
+  kinematicDelay: 2
 --- !u!4 &5143888815587111452 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2429969049254813276, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}

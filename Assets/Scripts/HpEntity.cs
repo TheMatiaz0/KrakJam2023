@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HpEntity : MonoBehaviour
 {
-    public static event Action OnEnemyDied;
+    public static event Action<HpEntity> OnEnemyDied;
     
     [SerializeField] private float maxHp = 100;
     [SerializeField] private float startHp = 10;
@@ -23,6 +23,7 @@ public class HpEntity : MonoBehaviour
             if (_hp <= 0 || _hp >= 100)
             {
                 Death();
+                _hp = 25; // wtf i dunno
             }
         }
     }
@@ -41,7 +42,7 @@ public class HpEntity : MonoBehaviour
     {
         if (PlayerInstance.Current != null && PlayerInstance.Current.gameObject != this.gameObject)
         {
-            OnEnemyDied?.Invoke();
+            OnEnemyDied?.Invoke(this);
         }
         Destroy(this.gameObject);
     }

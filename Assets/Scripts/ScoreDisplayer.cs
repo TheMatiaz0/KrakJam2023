@@ -31,7 +31,7 @@ public class ScoreDisplayer : MonoBehaviour
         HpEntity.OnEnemyDied -= OnEnemyDied;
     }
 
-    private void OnEnemyDied()
+    private void OnEnemyDied(HpEntity _)
     {
         ScorePoints += scoreForKilling;
     }
