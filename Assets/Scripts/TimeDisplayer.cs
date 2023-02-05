@@ -9,12 +9,10 @@ public class TimeDisplayer : MonoBehaviour
     [SerializeField] private Text timeText;
     [SerializeField] private LevelController lvlController;
 
-    [SerializeField] private int minutesToSurvive = 5;
-    
     private void Update()
     {
         var p1 = TimeSpan.FromSeconds(lvlController.WinTimer);
-        var p2 = TimeSpan.FromMinutes(minutesToSurvive);
+        var p2 = TimeSpan.FromMinutes(lvlController.WinTimerThreshold / 60);
         var dt = (p2 - p1);
         if (dt.Seconds >= 0)
         {
@@ -22,7 +20,7 @@ public class TimeDisplayer : MonoBehaviour
         }
         else
         {
-            timeText.text = "Survived";
+            timeText.text = "";
         }
     }
 }

@@ -6,7 +6,8 @@ using System;
 public class LevelController : MonoBehaviour
 {
     public event Action OnVictory;
-    [SerializeField] private float winTimerThreshold = 300;
+    [SerializeField] private float winTimerThreshold = 180;
+    public float WinTimerThreshold => winTimerThreshold;
 
     private bool _done;
     public bool timerDone
