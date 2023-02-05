@@ -16,6 +16,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         lvlController.OnVictory += SetupVictory;
         HpEntity.OnPlayerDied += SetupFailure;
     }

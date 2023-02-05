@@ -6,6 +6,8 @@ using System;
 public class LevelController : MonoBehaviour
 {
     public event Action OnVictory;
+    public static LevelController Current { get; private set; }
+
     [SerializeField] private float winTimerThreshold = 180;
     public float WinTimerThreshold => winTimerThreshold;
 
@@ -16,7 +18,12 @@ public class LevelController : MonoBehaviour
     }
 
     public float WinTimer { get; private set; }
-    
+
+    private void Awake()
+    {
+        Current = this;
+    }
+
     void Update()
     {
         if (WinTimer >= winTimerThreshold && !_done)
