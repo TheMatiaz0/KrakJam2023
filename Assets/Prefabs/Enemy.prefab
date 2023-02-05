@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c3771a1e11b8345ab98e96294054b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 2
+  maxHp: 3
   startHp: 2
 --- !u!114 &1085499887873818933
 MonoBehaviour:
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec12cb202fbd7741973a69150b42d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 8
   cooldown: 0.3
 --- !u!114 &369528090907900157
 MonoBehaviour:
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c21237f76399d4c90b46bcbfccf4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
   jump: 2
   jumpCooldown: 0.3
 --- !u!114 &2608059062298424418
