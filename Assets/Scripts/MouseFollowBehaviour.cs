@@ -9,6 +9,7 @@ public class MouseFollowBehaviour : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     private Vector2 initialArmPos;
+    private bool facingRight = true;
     private void Start()
     {
         initialArmPos = transform.localPosition;
@@ -24,6 +25,12 @@ public class MouseFollowBehaviour : MonoBehaviour
 
         if (rotZ < -90  || rotZ > 90)
         {
+            if (facingRight)
+            {
+                player.transform.position -= new Vector3(0.415f,0f,0f);
+            }
+            
+            facingRight = false;
             spriteRenderer.flipX = true;
             transform.localPosition = new Vector3(-initialArmPos.x, initialArmPos.y, 0);
             if (player.eulerAngles.y == 0)
@@ -37,6 +44,11 @@ public class MouseFollowBehaviour : MonoBehaviour
         }
         else
         {
+            if (!facingRight)
+            {
+                player.transform.position += new Vector3(0.415f,0f,0f);
+            }
+            facingRight = true;
             spriteRenderer.flipX = false;
             transform.localPosition = initialArmPos;
         }
