@@ -1248,11 +1248,11 @@ RectTransform:
   m_Father: {fileID: 2025251060}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 334, y: -1050}
-  m_SizeDelta: {x: 631.1014, y: 300}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 30, y: 0}
+  m_SizeDelta: {x: 631.1014, y: 260}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1707404207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1286,14 +1286,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Mateusz Kusionowicz
-
-    Jakub Pasiecznik
-
-    Dawid Fluder
-
-    Mateusz
-    Czernecki'
+  m_Text: "Mateusz Kusionowicz\nDawid Fluder\nMateusz Czernecki\nJakub Pasiecznik\n\u0141ukasz
+    Styrna"
 --- !u!222 &1707404208
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1335,11 +1329,11 @@ RectTransform:
   m_Father: {fileID: 2025251060}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 321, y: -996}
-  m_SizeDelta: {x: 631.1014, y: 300}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_SizeDelta: {x: 631.1014, y: 310}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1806294169
 MonoBehaviour:
   m_ObjectHideFlags: 0
