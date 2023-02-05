@@ -11,7 +11,9 @@ public class TimeDisplayer : MonoBehaviour
     
     private void Update()
     {
-        // var p = new TimeSpan(minutes: 15);
-        // timeText.text = lvlController.WinTimer.ToString("HH:mm:ss.fff");
+        // why this piece of shit doesn't always work like it should
+        var p1 = TimeSpan.FromSeconds(lvlController.WinTimer);
+        var p2 = TimeSpan.FromMinutes(15);
+        timeText.text = (p2 - p1).ToString();
     }
 }

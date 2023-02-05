@@ -6,10 +6,7 @@ using UnityEngine;
 public class EliteAdditionalBehaviour : MonoBehaviour
 {
     [SerializeField] private LimitedHealingPoint healingPointPrefab;
-    [SerializeField] private float kinematicDelay = 2;
 
-    private Coroutine spawnHealingPointCoroutine;
-    
     private void Start()
     {
         HpEntity.OnEnemyDied += OnEnemyDied;
