@@ -30,16 +30,15 @@ public class EliteAdditionalBehaviour : MonoBehaviour
             var rb2D = healingPoint.GetComponent<Rigidbody2D>();
             col.isTrigger = false;
             rb2D.isKinematic = false;
-            DOVirtual.DelayedCall/*jebac unity |: */(timeForDynamicDrop, () =>
+            DOVirtual.DelayedCall /*jebac unity |: */(timeForDynamicDrop, () =>
             {
-                Debug.Log("tesfasfasgasgsagsagsagsag");
                 col.isTrigger = true;
                 rb2D.isKinematic = true;
-            }).SetLink(this.gameObject);
-            DOVirtual.DelayedCall/*jebac unity |: */(timeToDisappearHealing, () =>
+            });
+            DOVirtual.DelayedCall /*jebac unity |: */(timeToDisappearHealing, () =>
             {
                 Destroy(healingPoint.gameObject);
-            }).SetLink(this.gameObject);
+            });
         }
     }
 }
