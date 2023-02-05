@@ -173,7 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healingPointPrefab: {fileID: 1720239462964443579, guid: d3261a50fef2843438a546e3c0d07498, type: 3}
-  kinematicDelay: 2
+  timeToDisappearHealing: 4
+  timeForDynamicDrop: 0.5
 --- !u!4 &5143888815587111452 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2429969049254813276, guid: 0d681e9caf8f58846ae0d4c5046c1e59, type: 3}

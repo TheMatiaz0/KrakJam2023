@@ -6,6 +6,7 @@ using UnityEngine;
 public class HpEntity : MonoBehaviour
 {
     public static event Action<HpEntity> OnEnemyDied;
+    public static event Action<HpEntity> OnHurt;
     
     [SerializeField] private float maxHp = 100;
     [SerializeField] private float startHp = 10;
@@ -19,6 +20,10 @@ public class HpEntity : MonoBehaviour
             #if UNITY_EDITOR
             //Debug.Log($"{this.gameObject.name} has now <color=red>{value} HP</color>", this.gameObject);
             #endif
+            if (value < 0)
+            {
+                OnHurt?.Invoke(this);
+            }
             _hp = Mathf.Clamp(value, 0, maxHp);
             if (_hp <= 0 || _hp >= 100)
             {
