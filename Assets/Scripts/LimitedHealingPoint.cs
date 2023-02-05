@@ -32,7 +32,7 @@ public class LimitedHealingPoint : MonoBehaviour
         if (playerIn && healCoroutine == null)
             healCoroutine = StartCoroutine(HealWithCooldown(playerCol));
         if(!playerIn)
-            root.material.DOFloat(depleted ? -0.5f : 0, "_Grow", 1).SetLink(this.gameObject);
+            root?.material.DOFloat(depleted ? -0.5f : 0, "_Grow", 1).SetLink(this.gameObject);
          
     }
 
@@ -63,7 +63,7 @@ public class LimitedHealingPoint : MonoBehaviour
             {
                 if (!sound.isPlaying)
                 {
-                    root.material.DOFloat(1, "_Grow", 2);
+                    root?.material.DOFloat(1, "_Grow", 2);
                     
                     sound.Play();
                 }
@@ -75,7 +75,7 @@ public class LimitedHealingPoint : MonoBehaviour
             else
             {
                 depleted = true;
-                root.material.DOFloat(-0.5f, "_Grow", 1);
+                root?.material.DOFloat(-0.5f, "_Grow", 1);
                 
                 sound.Stop();
                 particles.Stop();

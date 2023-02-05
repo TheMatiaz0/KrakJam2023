@@ -26,19 +26,11 @@ public class EliteAdditionalBehaviour : MonoBehaviour
         if (entity == this.GetComponent<HpEntity>())
         {
             var healingPoint = Instantiate(healingPointPrefab, this.transform.position, Quaternion.identity);
-            var col = healingPoint.GetComponent<Collider2D>();
-            var rb2D = healingPoint.GetComponent<Rigidbody2D>();
-            col.isTrigger = false;
-            rb2D.isKinematic = false;
-            DOVirtual.DelayedCall /*jebac unity |: */(timeForDynamicDrop, () =>
-            {
-                col.isTrigger = true;
-                rb2D.isKinematic = true;
-            }).OnComplete(() => DOVirtual.DelayedCall /*jebac unity |: */(timeToDisappearHealing, () =>
+            DOVirtual.DelayedCall /*jebac unity |: */(timeToDisappearHealing, () =>
             {
                 Destroy(healingPoint.gameObject);
-            }) 
-            );
+            });
+
         }
     }
 }
