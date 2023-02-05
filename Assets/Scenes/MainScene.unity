@@ -5696,7 +5696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8d4e7b91264bb48b8c2eb5b3cd75a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lvlController: {fileID: 0}
+  lvlController: {fileID: 1291293777}
   main: {fileID: 1683407053}
   titleText: {fileID: 617431518}
   victoryMessage: You have survived the waves
