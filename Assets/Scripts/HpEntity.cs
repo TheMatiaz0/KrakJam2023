@@ -39,7 +39,7 @@ public class HpEntity : MonoBehaviour
 
     private void Death()
     {
-        if (PlayerInstance.Current.gameObject != this.gameObject)
+        if (PlayerInstance.Current != null && PlayerInstance.Current.gameObject != this.gameObject)
         {
             OnEnemyDied?.Invoke();
         }
