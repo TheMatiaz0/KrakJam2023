@@ -7,3 +7,5 @@ The Team (sorted by join date):
 - Mateusz Czernecki (Maticzpl),
 - Dawid Fluder (Laterio),
 - Łukasz Styrna (RGlitch).
+
+GGJ page: https://globalgamejam.org/2023/games/limbed-out-4
